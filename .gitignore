@@ -2,6 +2,7 @@
 
 *.iml
 *.map
+*.sass-cache/
 
 ## Directory-based project format:
 .idea/
