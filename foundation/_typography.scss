@@ -1,0 +1,122 @@
+$font-base-size: 16px;
+$font-line-height: 1.4;
+$std-bottom-margin: $font-base-size * $font-line-height / 2;
+
+body {
+	font-family: "source-sans-pro", "Helvetica Neue", "Arial", sans-serif;
+	font-size: $font-base-size;
+	font-weight: normal;
+	line-height: $font-line-height;
+}
+
+p {
+	margin-bottom: $std-bottom-margin;
+}
+
+pre {
+	font-family: "Consolas", "Menlo", monospace;
+	font-size: $font-base-size;
+}
+
+.light-content {
+	color: white;
+}
+
+// Headers
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "source-sans-pro", "Helvetica Neue", "Arial", sans-serif;
+	font-weight: 100;
+	margin-top: 2 * $std-bottom-margin;
+	margin-bottom: $std-bottom-margin;
+}
+
+h1, .h1 {
+	font-size: 300%;
+}
+
+h2, .h2 {
+	font-size: 240%;
+}
+
+h3, .h3 {
+	font-size: 200%;
+}
+
+h4, .h4 {
+	font-size: 160%;
+}
+
+h5, .h5 {
+	font-size: 140%;
+}
+
+h6, .h6 {
+	font-size: 120%;
+}
+
+// Font sizes
+
+p.lead {
+	font-size: 120%;
+}
+
+p.secondary {
+	font-size: 85%;
+}
+
+p.small {
+	font-size: 90%;
+	color: $mediumGray;
+}
+
+// Font decorations
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+// Alignment classes
+
+.text-left {
+	text-align:left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-justify {
+	text-align: justify;
+}
+
+// Links
+
+a {
+	color: $highlightColor;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+hr {
+	border: none;
+	height: 1px;
+}
+
+// Other styles
+code {
+	font-family: "consolas", monospace;
+	background: #EDEDED;
+	padding: 2px 0;
+}

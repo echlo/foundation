@@ -1,0 +1,179 @@
+//
+// Grids
+//
+// We define 5 classes
+
+$grid-sizes: (
+		// Extra small, smart phones
+		xs: 0,
+		// Small, smart phones landscape and small tablets
+		sm: 544px,
+		// Medium, tablets, desktop
+		md: 768px,
+		// Large, tablet landscape, laptops
+		lg: 992px,
+		// Extra Large, widescreen computers
+		xl: 1200px
+);
+$grid-columns: 	12;
+$gutter-width: 	1.875rem;
+
+// Returns the next class size based on the input
+@function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
+	$index: index($all-sizes-keys, $class);
+	@return if($index < length($all-sizes-keys), nth($all-sizes, $index + 1), null)
+}
+
+@function get-size-class-min($class, $all-sizes: $grid-sizes) {
+	$size: map_get($all-sizes, $class);
+	@return if($size > 0, $size, null);
+}
+
+@function get-size-class-max($class, $all-sizes: $grid-sizes) {
+	$next-size-class: get-next-size-class($class);
+	@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
+}
+
+// This mixin contains media queries for screen sizes above a certain class size
+@mixin media-breakpoint-up($class) {
+	$size: get-size-class-min($class);
+	@if $size {
+		@media (min-width: #{$size}) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+// This mixin contains media queries for screen sizes below a certain class size
+@mixin media-breakpoint-down($class) {
+	$size: get-size-class-max($class);
+	@if $size {
+		@media (max-width: $size) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+// Use this mixin to give classes row properties
+@mixin make-row($gutter: $gutter-width) {
+	margin-left: ($gutter / -2);
+	margin-right: ($gutter / -2);
+	@include clearfix;
+}
+
+// Use this mixin to give classes properties like a column
+@mixin make-col($gutter: $gutter-width) {
+	min-height: 1px;
+	padding-left: ($gutter/2);
+	padding-right: ($gutter/2);
+	position: relative;
+	box-sizing: border-box;
+}
+
+@mixin make-col-span($columns) {
+	width: percentage($columns/$grid-columns);
+}
+
+@mixin make-col-offset($columns) {
+	margin-left: percentage($columns/$grid-columns);
+}
+
+// Container elements
+.container {
+	margin: 0 auto;
+	padding-left: $gutter-width/2;
+	padding-right: $gutter-width/2;
+
+	@include media-breakpoint-up(sm) {
+		max-width: 576px; // 48 px per col
+	}
+
+	@include media-breakpoint-up(md) {
+		max-width: 720px; // 60 px per col
+	}
+
+	@include media-breakpoint-up(lg) {
+		max-width: 960px; // 80 px per col
+	}
+
+	@include media-breakpoint-up(xl) {
+		max-width: 1140px; // 95 px per col
+	}
+}
+
+.container-fluid {
+	max-width: 100%;
+}
+
+.row {
+	@include make-row();
+}
+
+%column-props {
+	@include make-col();
+}
+
+// Adding column properties to all column classes for each size class
+@for $i from 1 through $grid-columns {
+	@each $size, $val in $grid-sizes {
+		.col-#{$size}-#{$i} {
+			@extend %column-props;
+		}
+	}
+}
+
+// Column classes and column offsets for each size class
+@each $size, $val in $grid-sizes {
+	@include media-breakpoint-up($size) {
+		%#{$size}-float {
+			float: left;
+		}
+		@for $i from 1 through $grid-columns {
+			.col-#{$size}-#{$i} {
+				@extend %#{$size}-float;
+				@include make-col-span($i);
+			}
+
+			.col-#{$size}-offset-#{$i} {
+				@include make-col-offset($i);
+			}
+		}
+	}
+}
+
+// Visibility classes
+@each $size, $val in $grid-sizes {
+	.visible-#{$size}-block {
+		display: none;
+	}
+
+	.visible-#{$size}-inline {
+		display: none;
+	}
+
+	.visible-#{$size}-inline-block {
+		display: none;
+	}
+
+	@for $i from 1 through $grid-columns {
+		.visible-#{$size}-block {
+			display: block !important;
+		}
+
+		.visible-#{$size}-inline {
+			display: inline !important;
+		}
+
+		.visible-#{$size}-inline-block {
+			display: inline-block !important;
+		}
+
+		.hidden-#{$size} {
+			display: none !important;
+		}
+	}
+}

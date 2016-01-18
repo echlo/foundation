@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>echlo | Foundation</title>
+    <link href="css/foundation.css" rel="stylesheet" type="text/css">
+    <link href="css/example.css" rel="stylesheet" type="text/css">
+    <script src="https://use.typekit.net/fvu5nio.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="section-heading">Echlo Foundation (EF)</h1>
+                <p class="lead">This page demonstrates foundation CSS styles for echlo. Use this as a play ground to see how styles apply or as an overview to the different styles. EF is adapted from Bootstrap for customization and brevity considerations, as such, a lot of the behaviors/terminology will be similar but may be unexpected at places. File a bug.</p>
+                <h2>Grid system</h2>
+                <p class="lead">EF contains a flexible 12 column grid system for laying out elements on the page. The grid adapts to various web page sizes and is analogous to Bootstrap's grid system.</p>
+                <h3>Hierarchy</h3>
+                <p>Use a <code>.container</code> element to setup and contain <code>.row</code> elements. The <code>.container</code> possess two important properties: 1. the <code>.container</code> class is always centered on the page and 2. the <code>.container</code> element is responsive. If you need to stretch out to the full width of the page instead, use <code>.container-fluid</code>.</p>
+                <p>Use <code>.row</code> elements to organize <code>.col-*</code> column elements. <code>.row</code> elements stack vertically in <code>.container</code> elements and each section does not overlap vertically.</p>
+                <p>Use <code>.col</code> elements that span multiple columns to set up layouts and wrap content.</p>
+                <figure class ="example show-col show-row show-container">
+                    <div class="container">
+                        Container
+                        <div class="row">
+                            Row
+                            <div class="col-xs-3">Col</div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Size classes</h3>
+                <p>EF define 5 different size classes corresponding to different device screen size. The table below shows off the key features of the size class. Each class applies to the breakpoint size and above.</p>
+                <table class="table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th>Extra small devices</th>
+                        <th>Small devices</th>
+                        <th>Medium devices</th>
+                        <th>Large devices</th>
+                        <th>Extra large devices</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>Grid behavior</th>
+                        <td>Horizontal at all times</td>
+                        <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
+                    </tr>
+                    <tr>
+                        <th>Breakpoints</th>
+                        <td>0</td>
+                        <td>546px</td>
+                        <td>768px</td>
+                        <td>992px</td>
+                        <td>1200px</td>
+                    </tr>
+                    <tr>
+                        <th>Container width</th>
+                        <td>Auto</td>
+                        <td>576px</td>
+                        <td>720px</td>
+                        <td>960px</td>
+                        <td>1140px</td>
+                    </tr>
+                    <tr>
+                        <th>Class prefix</th>
+                        <td><code>.col-xs-</code></td>
+                        <td><code>.col-sm-</code></td>
+                        <td><code>.col-md-</code></td>
+                        <td><code>.col-lg</code></td>
+                        <td><code>.col-xl-</code></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <h3>Example: Stacked to horizontal</h3>
+                <p>Using <code>.col-lg-*</code> classes, create a basic grid system that starts off stacked on mobile and tablets and starts becoming horizontal on desktop devices.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                            <div class="col-lg-1">.col-lg-1</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">.col-lg-8</div>
+                            <div class="col-lg-4">.col-lg-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">.col-lg-4</div>
+                            <div class="col-lg-4">.col-lg-4</div>
+                            <div class="col-lg-4">.col-lg-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">.col-lg-6</div>
+                            <div class="col-lg-6">.col-lg-6</div>
+                        </div>
+                    </div>
+                </figure>
+                <h3>Example: Mobile and desktop</h3>
+                <p>Below is an example of layout that changes width based on whether it's in mobile or tablet sizes or if it's viewed on the desktop.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-lg-8">
+                                .col-xs-12 .col-lg-8
+                            </div>
+                            <div class="col-xs-6 col-lg-4">
+                                .col-xs-6 .col-lg-4
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-lg-4">
+                                .col-xs-6 .col-lg-4
+                            </div>
+                            <div class="col-xs-6 col-lg-4">
+                                .col-xs-6 .col-lg-4
+                            </div>
+                            <div class="clearfix hidden-sm"></div>
+                            <div class="col-xs-6 col-lg-4">
+                                .col-xs-6 .col-lg-4
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Example: Mobile, tablet and desktop</h3>
+                <p>To further differentiate, apply different classes for different class sizes.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-8">.col-sm-12 .col-md-6 .col-lg-8</div>
+                            <div class="col-sm-6 col-lg-4">.col-sm-6 .col-lg-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                            <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Example: All size classes</h3>
+                <p>Columns that are over 12 columns overflow to the next line. Here, we demonstrate different layouts for each size class.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Example: Column offset</h3>
+                <p>Use <code>.col-{size}-offset-*</code> classes to give columns an offset and push them from the left.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                            <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4 col-md-offset-2">.col-sm-6 .col-md-4 .col-md-offset-2</div>
+                            <div class="col-sm-6 col-md-4 col-md-offset-2">.col-sm-6 .col-md-4 .col-md-offset-2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">.col-md-4</div>
+                            <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Example: Nested Columns</h3>
+                <p><code>.row</code> and <code>.col-*</code> can be nested, and the columns are relative ot the containing element.</p>
+                <figure class="example show-col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                Level 1: .col-sm-9
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-6">
+                                        Level 2: .col-xs-8 .col-sm-6
+                                    </div>
+                                    <div class="col-xs-4 col-sm-6">
+                                        Level 2: .col-xs-4 .col-sm-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+
+                <h3>Typography</h3>
+                <h4>Body font</h4>
+                <p>This is a paragraph. Specifically, this is a leading paragraph. The paragraph has a <code>leading</code> class applied to it. It can be used to lead into new articles or highlight specific passages.</p>
+                <p>Use a regular <code>p</code> tag to wrap paragraphs. This is the default font, which is 16 pixels by default.</p>
+                <p class="secondary">This is a secondary paragraph. It is slightly smaller and uses a lighter color as well.</p>
+                <div class="example">
+                    <p class="text-left">Left alignment</p>
+                    <p class="text-center">Center alignment</p>
+                    <p class="text-right">Right alignment</p>
+                    <p class="text-justify">This is justified, and as you can see there are no longer any ragged lines on each side as text gets squished to the column. Here is more text so you can see how there are rivers forming in the paragraph text as the browser attempts to justify them on both sides. Isn't typography fun?</p>
+                </div>
+
+                <p>Here are some other text treatments. Here's a <a href="#test">link</a>. Here's a site that you've likely <a href="www.google.com">visited before</a>. This is <strong>what superman is</strong>. And <em>a little bit of oomph for those who need them</em>. Or sometimes you just need to <s>strikethrough</s> or <del>delete</del> things.</p>
+                <div class="example">
+                    <h1>h1. Heading 1</h1>
+                    <h2>h2. Heading 2</h2>
+                    <h3>h3. Heading 3</h3>
+                    <h4>h4. Heading 4</h4>
+                    <h5>h5. Heading 5</h5>
+                    <h6>h6. Heading 6</h6>
+                </div>
+
+                <p>To show text over dark or colorful background, apply the <code>light-content</code> class on the tag.</p>
+
+                <figure class="example light-content">
+                    <p>The mare flattened her ears against her skull and snorted, throwing up earth with her hooves; she didn’t want to go.  Geralt didn’t calm her with the Sign; he jumped from the saddle and threw the reins over the horse’s head.  He no longer had his old sword in its lizard-skin sheath on his back; its place was filled with a shining, beautiful weapon with a cruciform and slender, well-weighted hilt, ending in a spherical pommel made of white metal.</p>
+                    <p>This time the gate didn’t open for him.  It was already open, just as he had left it.</p>
+                    <p>He heard singing.  He didn’t understand the words; he couldn’t even identify the language.  He didn’t need to – the witcher felt and understood the very nature, the essence, of this quiet, piercing singing which flowed through the veins in a wave of nauseous, overpowering menace.</p>
+                </figure>
+
+
+                <h2 class="section-heading">Forms & Controls</h2>
+                <div class="form-item">
+                    <label for="exampleFormInput">Name</label>
+                    <input id="exampleFormInput" type="text" placeholder="placeholder" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputValue">Signature</label>
+                    <input id="exampleFormInputValue" type="text" placeholder="placeholder" value="Hello world" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputPassword">Password</label>
+                    <input id="exampleFormInputPassword" type="password" placeholder="placeholder" />
+                </div>
+                <div class="form-item">
+                    <input type="button" value="input[type=button]" />
+                    <button>Button</button>
+                    <a class="button">a.button</a>
+                </div>
+                <div class="form-item">
+                    <input class="primary" type="button" value="input[type=button]" />
+                    <button class="primary">Button</button>
+                    <a class="button primary">a.button</a>
+                </div>
+                <a class="link-button">link-button</a>
+            </div>
+            <div class="col-lg-4 visible-lg-block">
+                <h2>Menu</h2>
+                <ul>
+                    <li>Grid System</li>
+                    <li>Typography</li>
+                    <li>Form elements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>
+        // Sanitizes all the pre/code blocks for display
+        var items = document.getElementsByTagName("code");
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var source = item.innerHTML.toString();
+            source = source.replace(/</g, "&lt;");
+            source = source.replace(/>/g, "&gt;");
+            item.innerHTML = source;
+        }
+
+        hljs.initHighlightingOnLoad();
+    </script>
+</div>
+</body>
+</html>

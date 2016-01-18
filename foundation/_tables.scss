@@ -1,0 +1,37 @@
+// Default table color scheme
+
+table {
+	width: 100%;
+	margin-bottom: 2 * $std-bottom-margin;
+}
+
+td, th {
+	padding: 10px;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+}
+
+.table-bordered {
+	border: 1px solid $lightGray;
+
+	thead {
+		border-bottom: 2px solid $lightGray;
+	}
+
+	td, th {
+		border: 1px solid $lightGray;
+	}
+}
+
+.table-striped {
+	tbody {
+		tr:nth-child(odd) {
+			background-color: $lightestGray;
+		}
+	}
+}
+
+

@@ -1,0 +1,30 @@
+.example {
+  padding: 50px 15px 15px;
+  margin-bottom: 10px;
+  position: relative; }
+  .example .row {
+    margin-bottom: 15px; }
+  .example:after {
+    content: "Example";
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999999;
+    top: 15px;
+    left: 15px;
+    position: absolute; }
+  .example.light-content {
+    background: black; }
+
+.show-container .container {
+  border: 1px solid #8be053;
+  background: #dbefce; }
+
+.show-row .row {
+  border: 1px solid #f9887f;
+  background: #f7d2d0; }
+
+.show-col [class^="col"] {
+  border: 1px solid #3dc0e8;
+  background: #ceebf3; }
+
+/*# sourceMappingURL=example.css.map */
