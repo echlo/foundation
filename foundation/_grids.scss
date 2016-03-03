@@ -1,3 +1,5 @@
+@import "mixins/_grids";
+
 //
 // Grids
 //
@@ -17,70 +19,6 @@ $grid-sizes: (
 );
 $grid-columns: 	12;
 $gutter-width: 	1.875rem;
-
-// Returns the next class size based on the input
-@function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
-	$index: index($all-sizes-keys, $class);
-	@return if($index < length($all-sizes-keys), nth($all-sizes, $index + 1), null)
-}
-
-@function get-size-class-min($class, $all-sizes: $grid-sizes) {
-	$size: map_get($all-sizes, $class);
-	@return if($size > 0, $size, null);
-}
-
-@function get-size-class-max($class, $all-sizes: $grid-sizes) {
-	$next-size-class: get-next-size-class($class);
-	@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
-}
-
-// This mixin contains media queries for screen sizes above a certain class size
-@mixin media-breakpoint-up($class) {
-	$size: get-size-class-min($class);
-	@if $size {
-		@media (min-width: #{$size}) {
-			@content;
-		}
-	} @else {
-		@content;
-	}
-}
-
-// This mixin contains media queries for screen sizes below a certain class size
-@mixin media-breakpoint-down($class) {
-	$size: get-size-class-max($class);
-	@if $size {
-		@media (max-width: $size) {
-			@content;
-		}
-	} @else {
-		@content;
-	}
-}
-
-// Use this mixin to give classes row properties
-@mixin make-row($gutter: $gutter-width) {
-	margin-left: ($gutter / -2);
-	margin-right: ($gutter / -2);
-	@include clearfix;
-}
-
-// Use this mixin to give classes properties like a column
-@mixin make-col($gutter: $gutter-width) {
-	min-height: 1px;
-	padding-left: ($gutter/2);
-	padding-right: ($gutter/2);
-	position: relative;
-	box-sizing: border-box;
-}
-
-@mixin make-col-span($columns) {
-	width: percentage($columns/$grid-columns);
-}
-
-@mixin make-col-offset($columns) {
-	margin-left: percentage($columns/$grid-columns);
-}
 
 // Container elements
 .container {
