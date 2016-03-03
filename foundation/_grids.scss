@@ -13,7 +13,7 @@ $grid-sizes: (
 		// Large, tablet landscape, laptops
 		lg: 992px,
 		// Extra Large, widescreen computers
-		xl: 1200px
+		xl: 1400px
 );
 $grid-columns: 	12;
 $gutter-width: 	1.875rem;
@@ -101,7 +101,7 @@ $gutter-width: 	1.875rem;
 	}
 
 	@include media-breakpoint-up(xl) {
-		max-width: 1140px; // 95 px per col
+		max-width: 1340px; // 95 px per col
 	}
 }
 
@@ -159,21 +159,19 @@ $gutter-width: 	1.875rem;
 		display: none;
 	}
 
-	@for $i from 1 through $grid-columns {
-		.visible-#{$size}-block {
-			display: block !important;
-		}
+	.visible-#{$size}-block {
+		display: block !important;
+	}
 
-		.visible-#{$size}-inline {
-			display: inline !important;
-		}
+	.visible-#{$size}-inline {
+		display: inline !important;
+	}
 
-		.visible-#{$size}-inline-block {
-			display: inline-block !important;
-		}
+	.visible-#{$size}-inline-block {
+		display: inline-block !important;
+	}
 
-		.hidden-#{$size} {
-			display: none !important;
-		}
+	.hidden-#{$size} {
+		display: none !important;
 	}
 }

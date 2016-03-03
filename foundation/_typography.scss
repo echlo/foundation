@@ -3,7 +3,7 @@ $font-line-height: 1.4;
 $std-bottom-margin: $font-base-size * $font-line-height / 2;
 
 body {
-	font-family: "source-sans-pro", "Helvetica Neue", "Arial", sans-serif;
+	font-family: "proxima nova", "Helvetica Neue", "Arial", sans-serif;
 	font-size: $font-base-size;
 	font-weight: normal;
 	line-height: $font-line-height;
@@ -25,7 +25,7 @@ pre {
 // Headers
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "source-sans-pro", "Helvetica Neue", "Arial", sans-serif;
+	font-family: "proxima nova", "Helvetica Neue", "Arial", sans-serif;
 	font-weight: 100;
 	margin-top: 2 * $std-bottom-margin;
 	margin-bottom: $std-bottom-margin;
@@ -57,12 +57,16 @@ h6, .h6 {
 
 // Font sizes
 
+@mixin secondary-font-size() {
+	font-size: 85%;
+}
+
 p.lead {
 	font-size: 120%;
 }
 
 p.secondary {
-	font-size: 85%;
+	@include secondary-font-size();
 }
 
 p.small {
@@ -73,7 +77,7 @@ p.small {
 // Font decorations
 
 strong {
-	font-weight: bold;
+	font-weight: 500;
 }
 
 em {
