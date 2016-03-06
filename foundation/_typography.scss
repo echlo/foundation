@@ -3,7 +3,7 @@ $font-line-height: 1.4;
 $std-bottom-margin: $font-base-size * $font-line-height / 2;
 
 body {
-	font-family: "proxima nova", "Helvetica Neue", "Arial", sans-serif;
+	font-family: "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 	font-size: $font-base-size;
 	font-weight: normal;
 	line-height: $font-line-height;
@@ -25,7 +25,7 @@ pre {
 // Headers
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "proxima nova", "Helvetica Neue", "Arial", sans-serif;
+	font-family: "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 	font-weight: 100;
 	margin-top: 2 * $std-bottom-margin;
 	margin-bottom: $std-bottom-margin;

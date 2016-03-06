@@ -1,25 +1,5 @@
 @import "mixins/_grids";
 
-//
-// Grids
-//
-// We define 5 classes
-
-$grid-sizes: (
-		// Extra small, smart phones
-		xs: 0,
-		// Small, smart phones landscape and small tablets
-		sm: 544px,
-		// Medium, tablets, desktop
-		md: 768px,
-		// Large, tablet landscape, laptops
-		lg: 992px,
-		// Extra Large, widescreen computers
-		xl: 1400px
-);
-$grid-columns: 	12;
-$gutter-width: 	1.875rem;
-
 // Container elements
 .container {
 	margin: 0 auto;
@@ -80,6 +60,22 @@ $gutter-width: 	1.875rem;
 				@include make-col-offset($i);
 			}
 		}
+
+		.visible-#{$size}-block {
+			display: block !important;
+		}
+
+		.visible-#{$size}-inline {
+			display: inline !important;
+		}
+
+		.visible-#{$size}-inline-block {
+			display: inline-block !important;
+		}
+
+		.hidden-#{$size} {
+			display: none !important;
+		}
 	}
 }
 
@@ -95,21 +91,5 @@ $gutter-width: 	1.875rem;
 
 	.visible-#{$size}-inline-block {
 		display: none;
-	}
-
-	.visible-#{$size}-block {
-		display: block !important;
-	}
-
-	.visible-#{$size}-inline {
-		display: inline !important;
-	}
-
-	.visible-#{$size}-inline-block {
-		display: inline-block !important;
-	}
-
-	.hidden-#{$size} {
-		display: none !important;
 	}
 }

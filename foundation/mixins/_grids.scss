@@ -1,3 +1,17 @@
+$grid-sizes: (
+	// Extra small, smart phones
+		xs: 0,
+	// Small, smart phones landscape and small tablets
+		sm: 544px,
+	// Medium, tablets, desktop
+		md: 768px,
+	// Large, tablet landscape, laptops
+		lg: 992px,
+	// Extra Large, widescreen computers
+		xl: 1400px
+);
+$grid-columns: 	12;
+$gutter-width: 	1.875rem;
 
 // Returns the next class size based on the input
 @function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
