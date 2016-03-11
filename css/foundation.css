@@ -247,6 +247,18 @@ code {
 .col-xs-offset-12 {
   margin-left: 100%; }
 
+.visible-xs-block {
+  display: block !important; }
+
+.visible-xs-inline {
+  display: inline !important; }
+
+.visible-xs-inline-block {
+  display: inline-block !important; }
+
+.hidden-xs {
+  display: none !important; }
+
 @media (min-width: 544px) {
   .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left; }
@@ -321,7 +333,19 @@ code {
     width: 100%; }
 
   .col-sm-offset-12 {
-    margin-left: 100%; } }
+    margin-left: 100%; }
+
+  .visible-sm-block {
+    display: block !important; }
+
+  .visible-sm-inline {
+    display: inline !important; }
+
+  .visible-sm-inline-block {
+    display: inline-block !important; }
+
+  .hidden-sm {
+    display: none !important; } }
 @media (min-width: 768px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left; }
@@ -396,7 +420,19 @@ code {
     width: 100%; }
 
   .col-md-offset-12 {
-    margin-left: 100%; } }
+    margin-left: 100%; }
+
+  .visible-md-block {
+    display: block !important; }
+
+  .visible-md-inline {
+    display: inline !important; }
+
+  .visible-md-inline-block {
+    display: inline-block !important; }
+
+  .hidden-md {
+    display: none !important; } }
 @media (min-width: 992px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left; }
@@ -471,7 +507,19 @@ code {
     width: 100%; }
 
   .col-lg-offset-12 {
-    margin-left: 100%; } }
+    margin-left: 100%; }
+
+  .visible-lg-block {
+    display: block !important; }
+
+  .visible-lg-inline {
+    display: inline !important; }
+
+  .visible-lg-inline-block {
+    display: inline-block !important; }
+
+  .hidden-lg {
+    display: none !important; } }
 @media (min-width: 1400px) {
   .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
     float: left; }
@@ -546,7 +594,19 @@ code {
     width: 100%; }
 
   .col-xl-offset-12 {
-    margin-left: 100%; } }
+    margin-left: 100%; }
+
+  .visible-xl-block {
+    display: block !important; }
+
+  .visible-xl-inline {
+    display: inline !important; }
+
+  .visible-xl-inline-block {
+    display: inline-block !important; }
+
+  .hidden-xl {
+    display: none !important; } }
 .visible-xs-block {
   display: none; }
 
@@ -555,18 +615,6 @@ code {
 
 .visible-xs-inline-block {
   display: none; }
-
-.visible-xs-block {
-  display: block !important; }
-
-.visible-xs-inline {
-  display: inline !important; }
-
-.visible-xs-inline-block {
-  display: inline-block !important; }
-
-.hidden-xs {
-  display: none !important; }
 
 .visible-sm-block {
   display: none; }
@@ -577,18 +625,6 @@ code {
 .visible-sm-inline-block {
   display: none; }
 
-.visible-sm-block {
-  display: block !important; }
-
-.visible-sm-inline {
-  display: inline !important; }
-
-.visible-sm-inline-block {
-  display: inline-block !important; }
-
-.hidden-sm {
-  display: none !important; }
-
 .visible-md-block {
   display: none; }
 
@@ -597,18 +633,6 @@ code {
 
 .visible-md-inline-block {
   display: none; }
-
-.visible-md-block {
-  display: block !important; }
-
-.visible-md-inline {
-  display: inline !important; }
-
-.visible-md-inline-block {
-  display: inline-block !important; }
-
-.hidden-md {
-  display: none !important; }
 
 .visible-lg-block {
   display: none; }
@@ -619,18 +643,6 @@ code {
 .visible-lg-inline-block {
   display: none; }
 
-.visible-lg-block {
-  display: block !important; }
-
-.visible-lg-inline {
-  display: inline !important; }
-
-.visible-lg-inline-block {
-  display: inline-block !important; }
-
-.hidden-lg {
-  display: none !important; }
-
 .visible-xl-block {
   display: none; }
 
@@ -639,18 +651,6 @@ code {
 
 .visible-xl-inline-block {
   display: none; }
-
-.visible-xl-block {
-  display: block !important; }
-
-.visible-xl-inline {
-  display: inline !important; }
-
-.visible-xl-inline-block {
-  display: inline-block !important; }
-
-.hidden-xl {
-  display: none !important; }
 
 input, textarea, keygen, select, button {
   font: inherit; }

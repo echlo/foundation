@@ -1,15 +1,15 @@
 // colors
-$darkBackgroundColor: #333333;
-$lightestGray: rgba(249, 249, 249, 1.0);
-$lighterGray: rgba(242, 242, 242, 1.0);
-$lightGray: #DDDDDD;
-$mediumGray: #999999;
-$highlightColor: #ff632b;
-$textColor: rgba(51, 51, 51, 1.0);
-$secondaryWhiteTextColor: rgba(255, 255, 255, 0.8);
-$primaryWhiteTextColor: rgba(255, 255, 255, 1.0);
-$debugColor: rgba(230, 0, 0, 0.1);
-$blackShadowColor: rgba(0, 0, 0, 0.5);
+$darkBackgroundColor: #333333 !default;
+$lightestGray: rgba(249, 249, 249, 1.0) !default;
+$lighterGray: rgba(242, 242, 242, 1.0) !default;
+$lightGray: #DDDDDD !default;
+$mediumGray: #999999 !default;
+$highlightColor: #ff632b !default;
+$textColor: rgba(51, 51, 51, 1.0) !default;
+$secondaryWhiteTextColor: rgba(255, 255, 255, 0.8) !default;
+$primaryWhiteTextColor: rgba(255, 255, 255, 1.0) !default;
+$debugColor: rgba(230, 0, 0, 0.1) !default;
+$blackShadowColor: rgba(0, 0, 0, 0.5) !default;
 
 $margin: 15px;
 $headerHeight: 60px;

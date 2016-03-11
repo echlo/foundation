@@ -35,7 +35,7 @@ a.link-button {
 
 // All buttons in the system
 input[type="submit"], button, input[type="button"], a.button {
-	border-radius: 5px;
+	border-radius: $formElementHeight / 2;
 	min-width: 100px;
 	background: $lightGray;
 	color: $textColor;
