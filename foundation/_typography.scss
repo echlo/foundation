@@ -1,6 +1,6 @@
 $font-base-size: 16px;
-$font-line-height: 1.4;
-$std-bottom-margin: $font-base-size * $font-line-height / 2;
+$font-line-height: 1.5;
+$std-bottom-margin: ($font-base-size * $font-line-height) / 2;
 
 body {
 	font-family: "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
@@ -27,7 +27,7 @@ pre {
 h1, h2, h3, h4, h5, h6 {
 	font-family: "proxima-nova", "Helvetica Neue", "Arial", sans-serif;
 	font-weight: 300;
-	margin-top: 2 * $std-bottom-margin;
+	margin-top: $std-bottom-margin;
 	margin-bottom: $std-bottom-margin;
 
 	&:first-child {
@@ -36,23 +36,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-	font-size: 300%;
+	font-size: 260%;
 }
 
 h2, .h2 {
-	font-size: 240%;
-}
-
-h3, .h3 {
 	font-size: 200%;
 }
 
-h4, .h4 {
+h3, .h3 {
 	font-size: 160%;
+	font-weight: 400;
+}
+
+h4, .h4 {
+	font-size: 140%;
+	font-weight: 400;
 }
 
 h5, .h5 {
-	font-size: 140%;
+	font-size: 120%;
+	font-weight: 600;
 }
 
 h6, .h6 {

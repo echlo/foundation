@@ -15,14 +15,14 @@ th {
 }
 
 .table-bordered {
-	border: 1px solid $lightGray;
+	border: 1px solid $lighterGray;
 
 	thead {
-		border-bottom: 2px solid $lightGray;
+		border-bottom: 2px solid $lighterGray;
 	}
 
 	td, th {
-		border: 1px solid $lightGray;
+		border: 1px solid $lighterGray;
 	}
 }
 

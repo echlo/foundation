@@ -20,7 +20,7 @@ input[type="text"], input[type="password"] {
 	height: $formElementHeight;
 	padding: 0px 0 0 10px;
 	background-color: $lightestGray;
-	border: 1px solid $lightGray;
+	border: 1px solid $lighterGray;
 	box-sizing: border-box;
 
 	&:focus {
@@ -37,7 +37,7 @@ a.link-button {
 input[type="submit"], button, input[type="button"], a.button {
 	border-radius: $formElementHeight / 2;
 	min-width: 100px;
-	background: $lightGray;
+	background: $lighterGray;
 	color: $textColor;
 	border: none;
 	line-height: $formElementHeight;
@@ -68,18 +68,18 @@ input[type="submit"], button, input[type="button"], a.button {
 	}
 
 	&:hover {
-		background-color: adjust_color($lightGray, $lightness: +5%);
+		background-color: adjust_color($lighterGray, $lightness: +5%);
 		text-decoration: none;
 		cursor: default;
 	}
 
 	&:active {
-		background-color: adjust_color($lightGray, $lightness: -10%);
+		background-color: adjust_color($lighterGray, $lightness: -10%);
 	}
 }
 
 figure {
-	border: 1px solid $lightGray;
+	border: 1px solid $lighterGray;
 	border-radius: 5px;
 	overflow: auto;
 	margin-bottom: $std-bottom-margin;

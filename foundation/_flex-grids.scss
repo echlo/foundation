@@ -1,7 +1,10 @@
-@import "mixins/_grids";
+// A flexbox implementation of grids
+@import "mixins/_flex-grids";
 
 // Container elements
 .container {
+	display: flex;
+	flex-direction: column;
 	margin: 0 auto;
 	padding-left: $gutter-width/2;
 	padding-right: $gutter-width/2;
@@ -52,7 +55,7 @@
 		}
 		@for $i from 1 through $grid-columns {
 			.col-#{$size}-#{$i} {
-				@extend %#{$size}-float;
+			//	@extend %#{$size}-float;
 				@include make-col-span($i);
 			}
 

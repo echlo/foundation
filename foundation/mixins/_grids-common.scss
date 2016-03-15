@@ -1,0 +1,54 @@
+$grid-sizes: (
+	// Extra small, smart phones
+		xs: 0,
+	// Small, smart phones landscape and small tablets
+		sm: 544px,
+	// Medium, tablets, desktop
+		md: 769px,
+	// Large, tablet landscape, laptops
+		lg: 992px,
+	// Extra Large, widescreen computers
+		xl: 1200px
+);
+$grid-columns: 	12;
+$gutter-width: 	1.875rem;
+
+// Returns the next class size based on the input
+@function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
+	$index: index($all-sizes-keys, $class);
+	@return if($index < length($all-sizes-keys), nth($all-sizes, $index + 1), null)
+}
+
+@function get-size-class-min($class, $all-sizes: $grid-sizes) {
+	$size: map_get($all-sizes, $class);
+	@return if($size > 0, $size, null);
+}
+
+@function get-size-class-max($class, $all-sizes: $grid-sizes) {
+	$next-size-class: get-next-size-class($class);
+	@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
+}
+
+// This mixin contains media queries for screen sizes above a certain class size
+@mixin media-breakpoint-above($class) {
+	$size: get-size-class-min($class);
+	@if $size {
+		@media (min-width: #{$size}) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+// This mixin contains media queries for screen sizes below a certain class size
+@mixin media-breakpoint-below($class) {
+	$size: get-size-class-max($class);
+	@if $size {
+		@media (max-width: $size) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
