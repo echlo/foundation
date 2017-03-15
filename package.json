@@ -1,0 +1,29 @@
+{
+  "name": "@echlo/foundation",
+  "version": "1.0.0",
+  "description": "CSS styles for echlo",
+  "main": "css/foundation.css",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2", 
+    "node-sass": "^4.5",
+    "cpx": "^1.5"
+  },
+  "scripts": {
+    "build": "node-sass foundation/foundation.scss --output-style compressed -o output",    
+    "develop": "npm run develop:copy & npm run develop:scss & npm run develop:example & npm run develop:serve & wait",
+    "develop:scss": "node-sass foundation/foundation.scss -o output && node-sass foundation/foundation.scss -wo output",
+    "develop:example": "node-sass developer/style.scss -o output && node-sass developer/style.scss -wo output",
+    "develop:copy": "cpx -w developer/index.html output",
+    "develop:serve": "live-server output",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/echlo/pulseweb.git"
+  },
+  "author": "Chong Han Chua",
+  "license": "UNLICENSED",
+  "private": true,
+  "homepage": "https://bitbucket.org/echlo/pulseweb#readme"
+}

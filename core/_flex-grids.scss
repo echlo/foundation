@@ -2,13 +2,8 @@
 @import "mixins/_flex-grids";
 
 // Container elements
-.container {
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;
-	padding-left: $gutter-width/2;
-	padding-right: $gutter-width/2;
-
+.container {	
+	@include make-container();
 	@include media-breakpoint-above(sm) {
 		max-width: 768px; 
 	}
@@ -18,23 +13,35 @@
 	}
 
 	@include media-breakpoint-above(lg) {
-		max-width: 1400px; 
+		max-width: 1160px; 
 	}
 
 	@include media-breakpoint-above(xl) {
 		max-width: 1340px;
-	}
+	}	
 }
 
 .container-fluid {
-	max-width: 100%;
+	@include make-container();
 }
 
-.row {
+.row {	
 	@include make-row();
 }
 
+%row-props {
+	@include make-row();
+}
+
+@for $i from 1 through 6 {
+	.row-#{$i} {
+		@extend %row-props;
+		flex-grow: $i;
+	} 
+}
+
 %column-props {
+	flex: 1;
 	@include make-col();
 }
 
@@ -47,12 +54,13 @@
 	}
 }
 
+.column {
+	@extend %column-props;
+}
+
 // Column classes and column offsets for each size class
 @each $size, $val in $grid-sizes {
 	@include media-breakpoint-above($size) {
-		%#{$size}-float {
-			float: left;
-		}
 		@for $i from 1 through $grid-columns {
 			.col-#{$size}-#{$i} {
 			//	@extend %#{$size}-float;

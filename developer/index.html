@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>echlo | Foundation</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://use.typekit.net/fvu5nio.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+<div id="example" class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h1 class="section-heading">Echlo Foundation</h1>
+            <p class="lead">This page demonstrates foundation CSS styles for echlo. Use this as a play ground to see how styles apply or as an overview to the different styles. EF is adapted from Bootstrap for customization and brevity considerations, as such, a lot of the behaviors/terminology will be similar but may be unexpected at places. File a bug.</p>
+            <h2>Grid system</h2>
+            <p>EF contains a flexible 12 column grid system for laying out elements on the page.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                        <div class="col-lg-1">.col-lg-1</div>
+                    </div>
+                </div>
+            </figure>
+            <h3>Hierarchy</h3>
+            <p>Use a <code>.container</code> element to setup and contain <code>.row</code> elements. The <code>.container</code> possess two important properties:</p>
+            <ol>
+                <li>the <code>.container</code> class is always centered on the page and </li>
+                <li>the <code>.container</code> element is responsive. If you need to stretch out to the full width of the page instead, use <code>.container-fluid</code>.</li>
+            </ol>
+
+            <p>Use <code>.row</code> elements to organize <code>.col-*</code> column elements. <code>.row</code> elements stack vertically in <code>.container</code> elements and each section does not overlap vertically.</p>
+            <p>Use <code>.col</code> elements that span multiple columns to set up layouts and wrap content.</p>
+            <figure class ="example show-col show-row show-container">
+                <div class="container">
+                    Container
+                    <div class="row">
+                        Row
+                        <div class="col-xs-3">Col</div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Responsive grid</h3>
+            <p>EF define 5 different size classes corresponding to different device screen size. The table below shows off the key features of the size class. Each class applies to the breakpoint size and above.</p>
+            <table class="table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Extra small devices</th>
+                    <th>Small devices</th>
+                    <th>Medium devices</th>
+                    <th>Large devices</th>
+                    <th>Extra large devices</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>Grid behavior</th>
+                    <td>Horizontal at all times</td>
+                    <td colspan="4">Collapsed to start, horizontal above breakpoints</td>
+                </tr>
+                <tr>
+                    <th>Breakpoints</th>
+                    <td>0</td>
+                    <td>546px</td>
+                    <td>768px</td>
+                    <td>992px</td>
+                    <td>1400px</td>
+                </tr>
+                <tr>
+                    <th>Container width</th>
+                    <td>Auto</td>
+                    <td>576px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1340px</td>
+                </tr>
+                <tr>
+                    <th>Class prefix</th>
+                    <td><code>.col-xs-</code></td>
+                    <td><code>.col-sm-</code></td>
+                    <td><code>.col-md-</code></td>
+                    <td><code>.col-lg</code></td>
+                    <td><code>.col-xl-</code></td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+            <h3>Example: Compressed or stretched rows</h3>
+            <p>Unlike columns, row can contract or fill, depending on the fill ratio. The class <code>row-*</code> indicates the ratio that can be filled</p>
+            <figure class="example show-container show-row">
+                <div class="container" style="height: 200px;">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <p>Row</p>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="container" style="height: 200px;">
+                    <div class="row-1">
+                        <div class="col-xs-3">
+                            <p>Row-1</p>
+                        </div>                        
+                    </div>
+                </div>
+            </figure>
+            
+            <h3>Example: Row ratios</h3>
+            <p>Foundation provides ratios from 1-6</p>
+            <figure class="example show-row">
+                <div class="container" style="height: 500px;">
+                    <div class="row-1">
+                        <div class="col-xs-3">
+                            <p>Row-1</p>
+                        </div>                        
+                    </div>
+                    <div class="row-2">
+                        <div class="col-xs-3">
+                            <p>Row-2</p>
+                        </div>                        
+                    </div>
+                    <div class="row-3">
+                        <div class="col-xs-3">
+                            <p>Row-3</p>
+                        </div>                        
+                    </div>
+                    <div class="row-4">
+                        <div class="col-xs-3">
+                            <p>Row-4</p>
+                        </div>                        
+                    </div>
+                    <div class="row-5">
+                        <div class="col-xs-3">
+                            <p>Row-5</p>
+                        </div>                        
+                    </div>
+                    <div class="row-6">
+                        <div class="col-xs-3">
+                            <p>Row-6</p>
+                        </div>                        
+                    </div>
+                </div>                
+            </figure>
+
+            <p>You can use a fix height row with ratio rows</p>
+            <figure class="example show-row">
+                <div class="container" style="height: 300px;">
+                    <div class="row-1">
+                        <div class="col-xs-3">
+                            <p>Row-1</p>
+                        </div>                        
+                    </div>
+                    <div class="row-2">
+                        <div class="col-xs-3">
+                            <p>Row-2</p>
+                        </div>                        
+                    </div>
+                    <div class="row" style="height: 50px;">
+                        <div class="col-xs-3">
+                            <p>Row, 50 px</p>
+                        </div>                        
+                    </div>                    
+                </div>                
+            </figure>
+
+            <h3>Example: Stacked to horizontal</h3>
+            <p>Using <code>.col-lg-*</code> classes, create a basic grid system that starts off stacked on mobile and tablets and starts becoming horizontal on desktop devices.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">.col-lg-8</div>
+                        <div class="col-lg-4">.col-lg-4</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">.col-lg-4</div>
+                        <div class="col-lg-4">.col-lg-4</div>
+                        <div class="col-lg-4">.col-lg-4</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">.col-lg-6</div>
+                        <div class="col-lg-6">.col-lg-6</div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Mobile and desktop</h3>
+            <p>Below is an example of layout that changes width based on whether it's in mobile or tablet sizes or if it's viewed on the desktop.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-8">
+                            .col-xs-12 .col-lg-8
+                        </div>
+                        <div class="col-xs-6 col-lg-4">
+                            .col-xs-6 .col-lg-4
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-lg-4">
+                            .col-xs-6 .col-lg-4
+                        </div>
+                        <div class="col-xs-6 col-lg-4">
+                            .col-xs-6 .col-lg-4
+                        </div>
+                        <div class="clearfix hidden-sm"></div>
+                        <div class="col-xs-6 col-lg-4">
+                            .col-xs-6 .col-lg-4
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Mobile, tablet and desktop</h3>
+            <p>To further differentiate, apply different classes for different class sizes.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-8">.col-sm-12 .col-md-6 .col-lg-8</div>
+                        <div class="col-sm-6 col-lg-4">.col-sm-6 .col-lg-4</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                        <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                        <div class="col-sm-6 col-md-4">.col-sm-6 .col-md-4</div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: All size classes</h3>
+            <p>Columns that are over 12 columns overflow to the next line. Here, we demonstrate different layouts for each size class.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">.col-xs-12 .col-sm-6 .col-md-4 .col-lg-3 .col-xl-2</div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Column offset</h3>
+            <p>Use <code>.col-{size}-offset-*</code> classes to give columns an offset and push them from the left.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                        <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-md-offset-2">.col-sm-6 .col-md-4 .col-md-offset-2</div>
+                        <div class="col-sm-6 col-md-4 col-md-offset-2">.col-sm-6 .col-md-4 .col-md-offset-2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">.col-md-4</div>
+                        <div class="col-md-4 col-md-offset-2">.col-md-4 .col-md-offset-2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Column alignment in rows</h3>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row align-start">
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3">
+                            col-xs-3
+                        </div>
+                    </div>
+                    <div class="row align-center">
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3">
+                            col-xs-3
+                        </div>
+                    </div>
+                    <div class="row align-end">
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3">
+                            col-xs-3
+                        </div>
+                    </div>
+                    <div class="row align-justify">
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3">
+                            col-xs-3
+                        </div>
+                    </div>
+                    <div class="row align-spaced">
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3 ">
+                            col-xs-3
+                        </div>
+                        <div class="col-xs-3">
+                            col-xs-3
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row align-top">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>
+                    <div class="row align-middle">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>
+                    <div class="row align-bottom">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>
+                    <div class="row align-tall">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Nested Columns</h3>
+            <p><code>.row</code> and <code>.col-*</code> can be nested, and the columns are relative ot the containing element.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            Level 1: .col-sm-9
+                            <div class="row">
+                                <div class="col-xs-8 col-sm-6">
+                                    Level 2: .col-xs-8 .col-sm-6
+                                </div>
+                                <div class="col-xs-4 col-sm-6">
+                                    Level 2: .col-xs-4 .col-sm-6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Column contents vertical alignment</h3>
+            <figure class="example show-p">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-2 align-top">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 align-middle">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 align-bottom">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 align-spaced">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 align-justify">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2">
+                            <p>This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned</p>
+                        </div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Column contents horizontal alignment</h3>
+            <figure class="example show-p">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 align-start">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12 align-center">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12 align-end">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12 align-wide">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>                        
+                    </div>
+                </div>
+            </figure>
+
+            <h2>Typography</h2>
+            <h3>Text styles</h3>
+            <figure class="example">                
+                <p class="lead">This is a paragraph. Specifically, this is a leading paragraph. The paragraph has a <code>lead</code> class applied to it. It can be used to lead into new articles or highlight specific passages.</p>
+                <p>Use a regular <code>p</code> tag to wrap paragraphs. This is the default font, which is 17 pixels by default.</p>
+                <p class="small">This is a slightly smaller paragraph. Use <code>.small</code> to make the text smaller!</p>
+            </figure>
+
+            <h3>Text colors</h3>
+
+            <figure class="example">
+                <p>Sometimes fate is like a small sandstorm that keeps changing directions. You change direction but the sandstorm chases you. You turn again, but the storm adjusts. Over and over you play this out, like some ominous dance with death just before dawn.</p> 
+                
+                <p class="lightest-shade dark-content">Why? Because this storm isn’t something that blew in from far away, something that has nothing to do with you. This storm is you. Something inside of you. So all you can do is give in to it, step right inside the storm, closing your eyes and plugging up your ears so the sand doesn’t get in, and walk through it, step by step.</p>
+
+                <p class="lightest-shade medium-content">There’s no sun there, no moon, no direction, no sense of time. Just fine white sand swirling up into the sky like pulverized bones. That’s the kind of sandstorm you need to imagine.</p>
+
+                <p class="medium-shade medium-content">And you really will have to make it through that violent, metaphysical, symbolic storm. No matter how metaphysical or symbolic it might be, make no mistake about it: it will cut through flesh like a thousand razor blades. People will bleed there, and you will bleed too. Hot, red blood. You’ll catch that blood in your hands, your own blood and the blood of others.</p>
+
+                <p class="darkest-shade light-content">And once the storm is over you won’t remember how you made it through, how you managed to survive. You won’t even be sure, in fact, whether the storm is really over. But one thing is certain. When you come out of the storm you won’t be the same person who walked in. That’s what this storm’s all about.</p>                
+            </figure>
+
+            <h3>Text alignment</h3>
+            <figure class="example">
+                <p class="text-left">Left alignment</p>
+                <p class="text-center">Center alignment</p>
+                <p class="text-right">Right alignment</p>
+                <p class="text-justify">This is justified, and as you can see there are no longer any ragged lines on each side as text gets squished to the column. Here is more text so you can see how there are rivers forming in the paragraph text as the browser attempts to justify them on both sides. Isn't typography fun?</p>
+            </figure>
+            <h3>Text treatments</h3>
+            <figure class="example">
+                <p>Here are some other text treatments. Here's a <a href="#test">link</a>. Here's a site that you've likely <a href="www.google.com">visited before</a>. This is <strong>what superman is</strong>. And <em>a little bit of oomph for those who need them</em>. Or sometimes you just need to <s>strikethrough</s> or <del>delete</del> things.</p>
+            </figure>
+            <h3>Headings</h3>
+            <figure class="example">
+                <h1 class="loud">h1.loud Use this for headings that need to shout</h1>
+                <h1>h1. This is the largest heading, such as the page title but it can flow into a second line</h1>
+                <h2>h2. Heading 2</h2>
+                <h3>h3. Heading 3</h3>
+                <h4>h4. Heading 4</h4>
+                <h5>h5. Heading 5</h5>
+                <h6>h6. Heading 6</h6>
+            </figure>
+
+            <h3>Lists</h3>
+            <figure class="example">
+                <ul>
+                    <li>This is the first unordered list</li>
+                    <li>This is the second unordered list. This is how a very long sentence is going to show up in the list. Observe the indentation of the second line.</li>
+                    <li>This is the third unordered list</li>
+                </ul>
+                <ol>
+                    <li>This is the first ordered list</li>
+                    <li>This is the second ordered list. This is how a very long sentence is going to show up in the list. Observe the indentation of the second line.</li>
+                    <li>This is the third ordered list</li>
+                </ol>
+                <ul class="no-bullet">
+                    <li>This is the first unordered list</li>
+                    <li>This is the second unordered list. This is how a very long sentence is going to show up in the list. Observe the indentation of the second line.</li>
+                    <li>This is the third unordered list</li>
+                </ul>
+                <ol class="no-bullet">
+                    <li>This is the first ordered list</li>
+                    <li>This is the second ordered list. This is how a very long sentence is going to show up in the list. Observe the indentation of the second line.</li>
+                    <li>This is the third ordered list</li>
+                </ol>
+            </figure>
+
+            <h2 class="section-heading">Forms & Controls</h2>
+
+            <h3>Text input</h3>
+            <figure class="example">
+                <div class="form-item">
+                    <label for="exampleFormInput">Name</label>
+                    <input id="exampleFormInput" type="text" placeholder="placeholder" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputValue">Signature</label>
+                    <input id="exampleFormInputValue" type="text" placeholder="placeholder" value="Hello world" />
+                    <div class="form-error">This is an error message</div>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputPassword">Password</label>
+                    <input id="exampleFormInputPassword" type="password" placeholder="placeholder" />
+                    <div class="form-error hidden">This is a hidden error message</div>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputTextarea">Textarea</label>
+                    <textarea id="exampleFormInputTextarea" placeholder="Such is a long description" rows="4" maxlength="100"></textarea>
+                </div>
+            </figure>
+
+            <h3>Buttons</h3>
+            <figure class="example">
+                <div class="form-item">
+                    <input type="button" value="input[type=button]" />
+                    <button>Button</button>
+                    <a class="button">a.button</a>
+                </div>
+                <div class="form-item">
+                    <input class="primary" type="button" value="input[type=button]" />
+                    <button class="primary">Button</button>
+                    <a class="button primary">a.button</a>
+                </div>
+                <div class="form-item">
+                    <input class="primary" type="button" value="input[type=button]" disabled="disabled"/>
+                    <button class="primary" disabled="disabled">Button</button>
+                    <a class="button primary" disabled="disabled">a.button</a>
+                </div>
+                <div class="form-item">
+                    <input class="primary small" type="button" value="input[type=button]" />
+                    <button class="primary small">Button</button>
+                    <a class="button primary small">a.button</a>
+                </div>
+            </figure>
+
+            <figure class="example">
+                <a class="link-button">link-button</a>
+                <a class="link-button secondary">link-button</a>
+            </figure>
+
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/github.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+<script>
+    function sanitizeAndIndent(source) {
+        // Replace < and > with html equivalents
+        source = source.replace(/</g, "&lt;");
+        source = source.replace(/>/g, "&gt;");
+        source = source.replace(/\t/g, "    ");
+        // Remove empty lines
+        let sourceParts = source.split("\n");
+        let newSourceParts = [];
+        for (var part of sourceParts) {
+            if (part.trim().length > 0) {
+                newSourceParts.push(part)
+            }
+        }
+        // Then we unindent the code so it's easier to write html source above
+        let shortestLength = 100;
+        for (var part of newSourceParts) {
+            let pttrn = /^\s*/;
+            let length = part.match(pttrn)[0].length;
+            shortestLength = Math.min(shortestLength, length);
+        }
+        for (var index in newSourceParts) {
+            newSourceParts[index] = newSourceParts[index].slice(shortestLength);
+        }
+        return newSourceParts.join("\n");
+    }
+
+    // We build source code blocks for every figure
+    let allFigures = document.querySelectorAll("figure.example");
+    for (let figure of allFigures) {
+        let source = figure.innerHTML.toString();
+        let sanitizedSource = sanitizeAndIndent(source);
+        figure.innerHTML += `<pre><code>${sanitizedSource}</pre></code>`
+    }
+
+    hljs.configure({
+        languages: ["html"]
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
+</html>

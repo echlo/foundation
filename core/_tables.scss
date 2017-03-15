@@ -1,4 +1,4 @@
-// Default table color scheme
+@import "mixins/_tables";
 
 table {
 	width: 100%;
@@ -15,23 +15,21 @@ th {
 }
 
 .table-bordered {
-	border: 1px solid $lighterGray;
+	border: 1px solid $table-border-color;
 
 	thead {
-		border-bottom: 2px solid $lighterGray;
+		border-bottom: 2px solid $table-border-color;
 	}
 
 	td, th {
-		border: 1px solid $lighterGray;
+		border: 1px solid $table-border-color;
 	}
 }
 
 .table-striped {
 	tbody {
 		tr:nth-child(odd) {
-			background-color: $lightestGray;
+			background-color: $table-background-color;
 		}
 	}
 }
-
-

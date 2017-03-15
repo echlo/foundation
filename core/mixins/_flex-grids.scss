@@ -1,0 +1,129 @@
+@import "grids-common";
+
+// Use this mixin to make columns
+@mixin make-container() {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;	
+	padding-left: $gutter-width/2;
+	padding-right: $gutter-width/2;
+	width: 100%;
+	box-sizing: border-box;
+	@include col-alignment;
+}
+
+// Use this mixin to give classes row properties
+@mixin make-row($gutter: $gutter-width) {
+	display: flex;
+	flex-shrink: 1;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: ($gutter / -2);
+	margin-right: ($gutter / -2);	
+	
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+
+	&.align-start {
+		justify-content: flex-start;
+	}
+
+	&.align-center {
+		justify-content: center;
+	}
+
+	&.align-end {
+		justify-content: flex-end;
+	}
+
+	&.align-justify {
+		justify-content: space-between;
+	}
+
+	&.align-spaced {
+		justify-content: space-around;
+	}
+
+	&.align-top {
+		align-items: flex-start;
+	}
+
+	&.align-middle {
+		align-items: center;
+	}
+
+	&.align-bottom {
+		align-items: flex-end;
+	}
+
+	&.align-tall {
+		align-items: stretch;
+	}
+}
+
+// Use this mixin to give classes properties like a column
+@mixin make-col($gutter: $gutter-width) {
+	display: flex;
+	flex-grow: 1;
+	flex-shrink: 1;	 
+	flex-direction: column;
+	min-height: 1px;
+	padding-left: ($gutter/2);
+	padding-right: ($gutter/2);
+	position: relative;
+	box-sizing: border-box;
+	width: 100%;
+	@include col-alignment;
+}
+
+@mixin col-alignment {
+	&.reverse {
+		flex-direction: column-reverse;
+	}
+
+	&.align-top {
+		justify-content: flex-start;
+	}
+
+	&.align-middle {
+		justify-content: center;
+	}
+
+	&.align-bottom {
+		justify-content: flex-end;
+	}
+
+	&.align-justify {
+		justify-content: space-between;
+	}
+
+	&.align-spaced {
+		justify-content: space-around;
+	}
+
+	&.align-start {
+		align-items: flex-start;
+	}
+
+	&.align-center {
+		align-items: center;
+	}
+
+	&.align-end {
+		align-items: flex-end;
+	}
+
+	&.align-wide {
+		align-items: stretch;
+	}
+}
+
+@mixin make-col-span($columns) {
+	flex-basis: percentage($columns/$grid-columns);
+	max-width: percentage($columns/$grid-columns);
+}
+
+@mixin make-col-offset($columns) {
+	margin-left: percentage($columns/$grid-columns);
+}

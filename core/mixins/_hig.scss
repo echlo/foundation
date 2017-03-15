@@ -1,0 +1,21 @@
+// Grayscale colors
+$lightestGray: rgba(249, 249, 249, 1.0) !default;
+$lighterGray: #DDDDDD !default;
+$lightGray: #ADADAD !default;
+$gray: #999999 !default;
+$darkGray: #7B7B7B !default;
+$black: rgba(51, 51, 51, 1.0) !default;
+$highlightColor: #ff632b !default;
+$textColor: rgba(77, 77, 77, 1.0) !default;
+
+@mixin make-darkest-shade() {
+    background-color: $black;
+}
+
+@mixin make-medium-shade() {
+    background-color: $lighterGray;
+}
+
+@mixin make-lightest-shade() {
+    background-color: $lightestGray;
+}

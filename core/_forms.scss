@@ -1,0 +1,131 @@
+@import "mixins/_forms";
+
+input, textarea, keygen, select, button {
+	font: inherit;
+}
+
+.form-item {
+	margin-bottom: 1.0em;
+
+	label {
+		font-size: 80%;
+		font-weight: 500;
+		margin-bottom: 0.3em;
+		display: block;
+	}
+}
+
+// Text inputs
+input[type="text"], input[type="password"] {
+	width: 100%;
+	font-weight: 400;
+	height: $formElementHeight;
+	padding: 0px 0 0 10px;
+	background-color: $lightestGray;
+	border: 1px solid $lighterGray;
+	box-sizing: border-box;
+
+	&:focus {
+		background: white;
+	}
+} 
+
+a.link-button {
+	color: $highlightColor;
+	display: inline-block;
+
+	&.secondary {
+		color: $darkGray;
+	}
+
+	&[disabled] {
+		opacity: 0.2;
+	}
+}
+
+a.no-text {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+// All buttons in the system
+input[type="submit"], button, input[type="button"], a.button {
+	border-radius: 5px;
+	border: 1px solid $lighterGray;
+	background-color: transparent;
+	min-width: 100px;	
+	color: $highlightColor;	
+	line-height: 35px;
+	display: inline-block;
+	position: relative;
+	padding: 0 15px;
+	text-align: center;
+	vertical-align: baseline;
+	text-shadow: none;
+	font-weight: 500;	
+
+	&.small {
+		font-size: 90%;
+		height: 0.9 * $formElementHeight;
+		line-height: 36px;
+		min-width: 80px;
+	}
+
+	&.primary {
+		color: $highlightColor;		
+		border: 1px solid $highlightColor;				
+	}
+
+	&:hover {		
+		top: -1px;
+		box-shadow: 0px 1px 0px $lighterGray;		
+		text-decoration: none;
+		cursor: default;		
+	}
+
+	&:active {
+		top: 0;
+		background-color: $lightestGray;
+		box-shadow: inset 0px 1px 0px $lighterGray;
+	}
+
+	&[disabled], &[disabled]:hover, &[disabled]:active, &.primary[disabled], &.primary[disabled]:hover, &.primary[disabled]:active {		
+		top: 0;
+		background-color: transparent;
+		color: adjust-color($color: $highlightColor, $lightness: +20%);		
+		box-shadow: none;
+	}
+	
+}
+
+.form-error {
+	color: red;
+	font-size: 12px;
+	padding: 5px 2px;
+
+	&.hidden {
+		display: none;
+	}
+}
+
+textarea {
+	width: 100%;
+	font-weight: 400;
+	// height: 3 * $formElementHeight;
+	padding: 5px 0 0 10px;
+	background-color: $lightestGray;
+	border: 1px solid $lighterGray;
+	box-sizing: border-box;
+
+	&:focus {
+		background: white;
+	}
+}
+
+figure {
+	border: 1px solid $lighterGray;	
+	overflow: auto;
+	margin-bottom: $std-bottom-margin;
+}

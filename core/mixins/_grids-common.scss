@@ -10,27 +10,27 @@ $grid-sizes: (
 	// Extra Large, widescreen computers
 		xl: 1200px
 );
-$grid-columns: 	12;
-$gutter-width: 	1.875rem;
+$grid-columns: 	12 !default;
+$gutter-width: 	1.875rem !default;
 
 // Returns the next class size based on the input
-@function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
-	$index: index($all-sizes-keys, $class);
-	@return if($index < length($all-sizes-keys), nth($all-sizes, $index + 1), null)
+@function get-next-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {	
+	$index: index($all-sizes-keys, $class);	
+	@return if($index < length($all-sizes-keys), nth(map-keys($all-sizes), $index + 1), null)
 }
 
-@function get-size-class-min($class, $all-sizes: $grid-sizes) {
-	$size: map_get($all-sizes, $class);
+@function get-size-class-min($class, $all-sizes: $grid-sizes) {	
+	$size: map_get($all-sizes, $class);	
 	@return if($size > 0, $size, null);
 }
 
 @function get-size-class-max($class, $all-sizes: $grid-sizes) {
-	$next-size-class: get-next-size-class($class);
+	$next-size-class: get-next-size-class($class);	
 	@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
 }
 
 // This mixin contains media queries for screen sizes above a certain class size
-@mixin media-breakpoint-above($class) {
+@mixin media-breakpoint-above($class) {	
 	$size: get-size-class-min($class);
 	@if $size {
 		@media (min-width: #{$size}) {

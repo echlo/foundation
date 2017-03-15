@@ -1,5 +1,8 @@
+#example {
+	padding-top: 3rem;
+}
 
-.example {
+figure.example {
 	padding: 50px 15px 15px;
 	margin-bottom: 10px;
 	position: relative;
@@ -21,6 +24,18 @@
 	&.light-content {
 		background: black;
 	}
+
+	pre, code {
+		white-space: pre-wrap;
+	}
+	
+	pre {
+		margin: 20px -15px -15px;
+		
+		code {
+			padding: 15px;
+		}
+	}
 }
 
 .show-container {
@@ -31,7 +46,7 @@
 }
 
 .show-row {
-	.row {
+	.row, [class^="row"] {
 		border: 1px solid #f9887f;
 		background: #f7d2d0;
 	}
@@ -41,5 +56,12 @@
 	[class^="col"] {
 		border: 1px solid #3dc0e8;
 		background: #ceebf3;
+	}
+}
+
+.show-p {
+	p {
+		border: 1px solid #3dc0e8;
+		background: #ceebf3; 
 	}
 }

@@ -1,0 +1,13 @@
+@import "./mixins/hig";
+
+.darkest-shade {
+    @include make-darkest-shade();
+}
+
+.medium-shade {
+    @include make-medium-shade(); 
+}
+
+.lightest-shade {
+    @include make-lightest-shade();
+}
