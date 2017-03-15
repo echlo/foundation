@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'Echlo Foundation'
+  s.name        = 'echlo-foundation'
   s.version     = '1.0.0'
   s.licenses    = ['MIT']
   s.summary     = "A foundation CSS framework"
