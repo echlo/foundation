@@ -29,7 +29,7 @@
 
 // First, we make sure the common properties are inherited by all column classes
 %column-props {
-	@include make-col();
+	@include make-col();	
 }
 @for $i from 1 through $grid-columns {
 	@each $size, $val in $grid-sizes {
@@ -70,25 +70,21 @@
 	}
 }
 
-// Column alignment classes are not wrapped under the column namespaces
-@include col-alignment();
-@each $size, $val in $grid-sizes {
-	@include media-breakpoint-above($size) {
-		@at-root {
-			@include col-alignment($size);
-		}
+// We generate the column alignment classes
+.container, .container-fluid, .column, [class^="col-"] {
+	@each $size, $val in $grid-sizes {
+		$size-class: size-class($size, $val);		
+		@include col-alignment($size-class)
 	}
 }
 
 // Row properties
-.row {	
-	@include make-row();
-}
-
 %row-props {
 	@include make-row();
 }
-
+.row {
+	@extend %row-props;
+}
 @for $i from 1 through 6 {
 	.row-#{$i} {
 		@extend %row-props;
@@ -98,8 +94,9 @@
 
 @each $size, $val in $grid-sizes {
 	@include media-breakpoint-above($size) {
+		$size-class: size-class($size, $val);
 		.row, .row-1, .row-2, .row-3, .row-4, .row-5, .row-6 {
-			@include row-alignment($size);
+			@include row-alignment($size-class);
 		}		
 	}
 }
