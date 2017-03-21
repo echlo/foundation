@@ -277,10 +277,16 @@
                 </div>
             </figure>
 
-            <h3>Example: Column alignment in rows</h3>
+            <h3>Alignment classes</h3>
+            <p>Foundation has a set of build in classes to help align grid items within other items. Typically, rows arrange their children horizontally while column and containers arrange their children vertically. In foundation, we always use <code>.start</code>, <code>.center</code>, <code>.end</code> to mean horizontal alignment, while <code>.top</code>,
+            <code>.middle</code>, <code>.bottom</code>
+            <code>.tall</code> means vertical alignments. <code>.reverse</code>, <code>.justify</code> and <code>.around</code> are only applied to it's primary axis.</p>
+
+            <h3>Example: Column alignment inside rows</h3>
+            <p>The following shows the use of <code>.start</code>, <code>.center</code>, <code>.end</code>, <code>.justify</code>, <code>.around</code> and <code>.reverse</code>.</p>
             <figure class="example show-col">
                 <div class="container">
-                    <div class="row align-start">
+                    <div class="row start">
                         <div class="col-xs-3 ">
                             col-xs-3
                         </div>
@@ -288,7 +294,7 @@
                             col-xs-3
                         </div>
                     </div>
-                    <div class="row align-center">
+                    <div class="row center">
                         <div class="col-xs-3 ">
                             col-xs-3
                         </div>
@@ -296,7 +302,7 @@
                             col-xs-3
                         </div>
                     </div>
-                    <div class="row align-end">
+                    <div class="row end">
                         <div class="col-xs-3 ">
                             col-xs-3
                         </div>
@@ -304,7 +310,7 @@
                             col-xs-3
                         </div>
                     </div>
-                    <div class="row align-justify">
+                    <div class="row justify">
                         <div class="col-xs-3 ">
                             col-xs-3
                         </div>
@@ -315,7 +321,7 @@
                             col-xs-3
                         </div>
                     </div>
-                    <div class="row align-spaced">
+                    <div class="row around">
                         <div class="col-xs-3 ">
                             col-xs-3
                         </div>
@@ -329,9 +335,12 @@
                 </div>
             </figure>
 
+            <p>Here we use <code>.top</code>,
+            <code>.middle</code>, <code>.bottom</code> and 
+            <code>.tall</code>.</p>
             <figure class="example show-col">
                 <div class="container">
-                    <div class="row align-top">
+                    <div class="row top">
                         <div class="col-xs-6 ">
                             This is a column
                         </div>
@@ -339,7 +348,7 @@
                             This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
                         </div>
                     </div>
-                    <div class="row align-middle">
+                    <div class="row middle">
                         <div class="col-xs-6 ">
                             This is a column
                         </div>
@@ -347,7 +356,7 @@
                             This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
                         </div>
                     </div>
-                    <div class="row align-bottom">
+                    <div class="row bottom">
                         <div class="col-xs-6 ">
                             This is a column
                         </div>
@@ -355,13 +364,144 @@
                             This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
                         </div>
                     </div>
-                    <div class="row align-tall">
+                    <div class="row tall">
                         <div class="col-xs-6 ">
                             This is a column
                         </div>
                         <div class="col-xs-6">
                             This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
                         </div>
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Content alignment inside columns</h3>
+            <p>Like rows, inline content can be aligned within the containing column. Here we show the use of <code>.top</code>, <code>.middle</code>, <code>.bottom</code> and <code>.around</code>. You can also apply <code>.reverse</code> to start from the bottom</p>
+            <figure class="example show-p">
+                <div class="container">
+                    <div class="row" style="height: 300px;">
+                        <div class="col-xs-2 top">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 middle">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 bottom">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 around">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 justify">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 reverse">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>                        
+                    </div>
+                </div>
+            </figure>
+
+            <p>To justify content horizontally, use <code>.start</code>, <code>.center</code> and <code>.end</code></p>
+            <figure class="example show-p">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 start">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12 center">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12 end">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>                        
+                    </div>
+                </div>
+            </figure>
+
+            <h3>Example: Size-class based row alignments</h3>
+            <p>Row alignments can be conditional on the size class. All standard row alignment classes, <code>.reverse</code> <code>.start</code> <code>.center</code> <code>.end</code> <code>.justify</code> <code>.around</code> <code>.top</code>
+            <code>.middle</code> <code>.bottom</code>
+            <code>.tall</code>, can be used with a size class prefix like <code>-md</code> to apply only in specific size classes and up.
+            </p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row end-md">
+                        <div class="col-xs-6">
+                            This is a column
+                        </div>
+                    </div>
+                    <div class="row center-xs end-md">
+                        <div class="col-xs-8">
+                            This is a column
+                        </div>
+                    </div>
+                    <div class="row reverse-md">
+                        <div class="col-xs-6">
+                            First column
+                        </div>
+                        <div class="col-xs-6">
+                            Second column
+                        </div>
+                    </div>
+                </div>
+                <div class="row top bottom-md">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>
+                    <div class="row middle top-md">
+                        <div class="col-xs-6 ">
+                            This is a column
+                        </div>
+                        <div class="col-xs-6">
+                            This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned
+                        </div>
+                    </div>                    
+            </figure>
+
+            <h3>Example: Size-class based column alignments</h3>
+            <p>Column alignments can also be conditional on size classes. All standard column alignment classes can be applied with a <code>-*</code> prefix to apply to the size class and above.
+            
+            <figure class="example show-p">
+                <div class="container">
+                    <div class="row" style="height: 300px;">                       
+                        <div class="col-xs-2 middle-md">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 bottom-md">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 around-md">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 justify-md">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>
+                        <div class="col-xs-2 reverse-md">
+                            <p>Hello world</p>
+                            <p>Goodbye world</p>
+                        </div>                        
                     </div>
                 </div>
             </figure>
@@ -382,61 +522,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </figure>
-
-            <h3>Example: Column contents vertical alignment</h3>
-            <figure class="example show-p">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-2 align-top">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-2 align-middle">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-2 align-bottom">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-2 align-spaced">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-2 align-justify">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-2">
-                            <p>This is a long sentence that would force the section to wrap into multiple lines. We can see how items flow even though they are all middle aligned</p>
-                        </div>
-                    </div>
-                </div>
-            </figure>
-
-            <h3>Example: Column contents horizontal alignment</h3>
-            <figure class="example show-p">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 align-start">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-12 align-center">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-12 align-end">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>
-                        <div class="col-xs-12 align-wide">
-                            <p>Hello world</p>
-                            <p>Goodbye world</p>
-                        </div>                        
                     </div>
                 </div>
             </figure>

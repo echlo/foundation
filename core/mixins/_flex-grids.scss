@@ -9,9 +9,54 @@
 	padding-right: $gutter-width/2;
 	width: 100%;
 	box-sizing: border-box;
-	@include col-alignment;
+	@include col-alignment();
 }
+// The mixin helps standardizes all alignment classes for rows
+@mixin row-alignment($size-class: "") {
+	@if $size-class != "" {
+		$size-class: "-" + $size-class;
+	}
 
+	&.reverse#{$size-class} {
+		flex-direction: row-reverse;
+	}
+
+	&.start#{$size-class} {
+		justify-content: flex-start;
+	}
+
+	&.center#{$size-class} {
+		justify-content: center;
+	}
+
+	&.end#{$size-class} {
+		justify-content: flex-end;
+	}
+
+	&.justify#{$size-class} {
+		justify-content: space-between;
+	}
+
+	&.around#{$size-class} {
+		justify-content: space-around;
+	}
+
+	&.top#{$size-class} {
+		align-items: flex-start;
+	}
+
+	&.middle#{$size-class} {
+		align-items: center;
+	}
+
+	&.bottom#{$size-class} {
+		align-items: flex-end;
+	}
+
+	&.tall#{$size-class} {
+		align-items: stretch;
+	}
+}
 // Use this mixin to give classes row properties
 @mixin make-row($gutter: $gutter-width) {
 	display: flex;
@@ -21,47 +66,51 @@
 	margin-left: ($gutter / -2);
 	margin-right: ($gutter / -2);	
 	
-	&.reverse {
-		flex-direction: row-reverse;
+	@include row-alignment();
+}
+// Mixin to define column alignment classes
+@mixin col-alignment($size-class: "") {
+	@if $size-class != "" {
+		$size-class: "-" + $size-class;
 	}
 
-	&.align-start {
+	&.reverse#{$size-class} {
+		flex-direction: column-reverse;
+	}
+
+	&.top#{$size-class} {
 		justify-content: flex-start;
 	}
 
-	&.align-center {
+	&.middle#{$size-class} {
 		justify-content: center;
 	}
 
-	&.align-end {
+	&.bottom#{$size-class} {
 		justify-content: flex-end;
 	}
 
-	&.align-justify {
+	&.justify#{$size-class} {
 		justify-content: space-between;
 	}
 
-	&.align-spaced {
+	&.around#{$size-class} {
 		justify-content: space-around;
 	}
 
-	&.align-top {
+	&.start#{$size-class} {
 		align-items: flex-start;
 	}
 
-	&.align-middle {
+	&.center#{$size-class} {
 		align-items: center;
 	}
 
-	&.align-bottom {
+	&.end#{$size-class} {
 		align-items: flex-end;
 	}
-
-	&.align-tall {
-		align-items: stretch;
-	}
+	// Stretch is the default value, and hence omitted	
 }
-
 // Use this mixin to give classes properties like a column
 @mixin make-col($gutter: $gutter-width) {
 	display: flex;
@@ -74,49 +123,7 @@
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
-	@include col-alignment;
-}
-
-@mixin col-alignment {
-	&.reverse {
-		flex-direction: column-reverse;
-	}
-
-	&.align-top {
-		justify-content: flex-start;
-	}
-
-	&.align-middle {
-		justify-content: center;
-	}
-
-	&.align-bottom {
-		justify-content: flex-end;
-	}
-
-	&.align-justify {
-		justify-content: space-between;
-	}
-
-	&.align-spaced {
-		justify-content: space-around;
-	}
-
-	&.align-start {
-		align-items: flex-start;
-	}
-
-	&.align-center {
-		align-items: center;
-	}
-
-	&.align-end {
-		align-items: flex-end;
-	}
-
-	&.align-wide {
-		align-items: stretch;
-	}
+	// @include col-alignment();	
 }
 
 @mixin make-col-span($columns) {

@@ -3,6 +3,9 @@
 *.iml
 *.map
 *.sass-cache/
+*.log
+node_modules/
+output/
 
 ## Directory-based project format:
 .idea/

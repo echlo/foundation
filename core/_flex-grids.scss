@@ -25,26 +25,11 @@
 	@include make-container();
 }
 
-.row {	
-	@include make-row();
-}
-
-%row-props {
-	@include make-row();
-}
-
-@for $i from 1 through 6 {
-	.row-#{$i} {
-		@extend %row-props;
-		flex-grow: $i;
-	} 
-}
-
+// Column properties
 %column-props {
 	flex: 1;
 	@include make-col();
 }
-
 // Adding column properties to all column classes for each size class
 @for $i from 1 through $grid-columns {
 	@each $size, $val in $grid-sizes {
@@ -53,7 +38,6 @@
 		}
 	}
 }
-
 .column {
 	@extend %column-props;
 }
@@ -62,9 +46,8 @@
 @each $size, $val in $grid-sizes {
 	@include media-breakpoint-above($size) {
 		@for $i from 1 through $grid-columns {
-			.col-#{$size}-#{$i} {
-			//	@extend %#{$size}-float;
-				@include make-col-span($i);
+			.col-#{$size}-#{$i} {			
+				@include make-col-span($i);				
 			}
 
 			.col-#{$size}-offset-#{$i} {
@@ -90,7 +73,7 @@
 	}
 }
 
-// Visibility classes
+// We have to hide the size-class visible blocks in all normal situations.
 @each $size, $val in $grid-sizes {
 	.visible-#{$size}-block {
 		display: none;
@@ -102,5 +85,40 @@
 
 	.visible-#{$size}-inline-block {
 		display: none;
+	}
+}
+// Column alignment classes are not wrapped under the column namespaces
+@at-root {
+	@include col-alignment();
+}
+@each $size, $val in $grid-sizes {
+	@include media-breakpoint-above($size) {
+		@at-root {
+			@include col-alignment($size);
+		}
+	}
+}
+
+// Row properties
+.row {	
+	@include make-row();
+}
+
+%row-props {
+	@include make-row();
+}
+
+@for $i from 1 through 6 {
+	.row-#{$i} {
+		@extend %row-props;
+		flex-grow: $i;
+	}
+}
+
+@each $size, $val in $grid-sizes {
+	@include media-breakpoint-above($size) {
+		.row, .row-1, .row-2, .row-3, .row-4, .row-5, .row-6 {
+			@include row-alignment($size);
+		}		
 	}
 }
