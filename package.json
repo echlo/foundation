@@ -16,6 +16,7 @@
     "develop:example": "node-sass developer/style.scss -o output && node-sass developer/style.scss -wo output",
     "develop:copy": "cpx -w developer/index.html output",
     "develop:serve": "live-server output",
+    "docs": "cpx developer/index.html docs && node-sass developer/style.scss -o docs",
     "size": "gzip -c output/foundation.css | wc -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
