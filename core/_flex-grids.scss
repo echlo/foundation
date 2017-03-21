@@ -25,15 +25,16 @@
 	@include make-container();
 }
 
-// Column properties
+// The columns classes are made here
+
+// First, we make sure the common properties are inherited by all column classes
 %column-props {
-	flex: 1;
 	@include make-col();
 }
-// Adding column properties to all column classes for each size class
 @for $i from 1 through $grid-columns {
 	@each $size, $val in $grid-sizes {
-		.col-#{$size}-#{$i} {
+		$size-class: size-class($size, $val);
+		.col#{$size-class}-#{$i} {
 			@extend %column-props;
 		}
 	}
@@ -42,55 +43,35 @@
 	@extend %column-props;
 }
 
-// Column classes and column offsets for each size class
+// Then we generate the width and visibility constraints
 @each $size, $val in $grid-sizes {
+	$size-class: size-class($size, $val);
+
 	@include media-breakpoint-above($size) {
 		@for $i from 1 through $grid-columns {
-			.col-#{$size}-#{$i} {			
+			.col#{$size-class}-#{$i} {			
 				@include make-col-span($i);				
 			}
 
-			.col-#{$size}-offset-#{$i} {
+			.col#{$size-class}-offset-#{$i} {
 				@include make-col-offset($i);
 			}
 		}
 
-		.visible-#{$size}-block {
-			display: block !important;
-		}
-
-		.visible-#{$size}-inline {
-			display: inline !important;
-		}
-
-		.visible-#{$size}-inline-block {
-			display: inline-block !important;
-		}
-
-		.hidden-#{$size} {
+		.hidden#{$size-class} {
 			display: none !important;
 		}
 	}
-}
 
-// We have to hide the size-class visible blocks in all normal situations.
-@each $size, $val in $grid-sizes {
-	.visible-#{$size}-block {
-		display: none;
-	}
-
-	.visible-#{$size}-inline {
-		display: none;
-	}
-
-	.visible-#{$size}-inline-block {
-		display: none;
+	@include media-breakpoint-smaller($size, false) {
+		.visible#{$size-class} {
+			display: none;
+		}
 	}
 }
+
 // Column alignment classes are not wrapped under the column namespaces
-@at-root {
-	@include col-alignment();
-}
+@include col-alignment();
 @each $size, $val in $grid-sizes {
 	@include media-breakpoint-above($size) {
 		@at-root {

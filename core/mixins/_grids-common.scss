@@ -19,36 +19,61 @@ $gutter-width: 	1.875rem !default;
 	@return if($index < length($all-sizes-keys), nth(map-keys($all-sizes), $index + 1), null)
 }
 
+@function get-prev-size-class($class, $all-sizes: $grid-sizes, $all-sizes-keys: map_keys($all-sizes)) {
+	$index: index($all-sizes-keys, $class);	
+	@return if($index < length($all-sizes-keys) and $index > 1, 
+				nth(map-keys($all-sizes), $index - 1), 
+				null)
+}
+
 @function get-size-class-min($class, $all-sizes: $grid-sizes) {	
-	$size: map_get($all-sizes, $class);	
-	@return if($size > 0, $size, null);
+	@if $class {
+		$size: map_get($all-sizes, $class);	
+		@return if($size > 0, $size, null);
+	}
+	@return null;
 }
 
 @function get-size-class-max($class, $all-sizes: $grid-sizes) {
-	$next-size-class: get-next-size-class($class);	
-	@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
+	@if $class {
+		$next-size-class: get-next-size-class($class);	
+		@return if($next-size-class, get-size-class-min($next-size-class) - 1px, null)
+	}
+	@return null;
 }
 
 // This mixin contains media queries for screen sizes above a certain class size
-@mixin media-breakpoint-above($class) {	
+@mixin media-breakpoint-above($class, $passthrough: true) {	
 	$size: get-size-class-min($class);
 	@if $size {
 		@media (min-width: #{$size}) {
 			@content;
 		}
-	} @else {
+	} @else if $passthrough {
 		@content;
 	}
 }
 
 // This mixin contains media queries for screen sizes below a certain class size
-@mixin media-breakpoint-below($class) {
+@mixin media-breakpoint-smaller-or-equal($class, $passthrough: true) {
 	$size: get-size-class-max($class);
 	@if $size {
 		@media (max-width: $size) {
 			@content;
 		}
-	} @else {
+	} @else if $passthrough {
+		@content;
+	}
+}
+
+@mixin media-breakpoint-smaller($class, $passthrough: true) {
+	$prev-size-class: get-prev-size-class($class);
+	$size: get-size-class-max($prev-size-class);
+	@if $size {
+		@media (max-width: $size) {
+			@content;
+		}
+	} @else if $passthrough {
 		@content;
 	}
 }

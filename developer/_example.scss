@@ -1,5 +1,16 @@
+#toc {
+	padding-top: 1rem;
+	position: fixed;
+	right: 0;	
+
+	.toc-h3 {
+		padding-left: 1.5rem;
+	}
+}
+
 #example {
 	padding-top: 3rem;
+	padding-bottom: 2rem;
 }
 
 figure.example {
