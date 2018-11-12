@@ -11,7 +11,9 @@
         <article id="documentation" class="col-lg-8">
             <h1 id="echlo-foundation" class="section-heading">Echlo Foundation</h1>
             <p class="lead">This page demonstrates foundation CSS styles for echlo. Use this as a play ground to see how styles apply or as an overview to the different styles. EF is adapted from Bootstrap for customization and brevity considerations, as such, a lot of the behaviors/terminology will be similar but may be unexpected at places. File a bug.</p>
+
             <h2 id="grid-system">Grid system</h2>
+
             <p>EF contains a flexible 12 column grid system for laying out elements on the page.</p>
             <figure class="example show-col">
                 <div class="container">
@@ -31,6 +33,20 @@
                     </div>
                 </div>
             </figure>
+
+            <p>Alternatively, use the generic <code>.column</code> class to fit as many columns as required onto a row.</p>
+            <figure class="example show-col">
+                <div class="container">
+                    <div class="row">
+                        <div class="column">.column</div>
+                        <div class="column">.column</div>
+                        <div class="column">.column</div>
+                        <div class="column">.column</div>
+                        <div class="column">.column</div>
+                    </div>
+                </div>
+            </figure>
+
             <h3 id="hierarchy">Hierarchy</h3>
             <p>Use a <code>.container</code> element to setup and contain <code>.row</code> elements. The <code>.container</code> possess two important properties:</p>
             <ol>
@@ -541,7 +557,49 @@
                 </div>
             </figure>
 
+            <h2>Colors</h2>
+            <p>Foundation uses a simple color system that is comprised of a highlight color and a palette of grayscale colors.</p>
+            <h3>Highlight</h3>            
+            <div class="color-block highlight"></div>
+
+            <h3>Grayscale</h3>
+            <div>
+                <div class="color-block gray-3"></div>
+                <div class="color-block gray-5"></div>
+                <div class="color-block gray-10"></div>
+                <div class="color-block gray-20"></div>
+                <div class="color-block gray-35"></div>
+                <div class="color-block gray-40"></div>
+                <div class="color-block gray-50"></div>
+                <div class="color-block gray-65"></div>
+                <div class="color-block gray-80"></div>
+                <div class="color-block gray-90"></div>
+                <div class="color-block gray-95"></div>
+            </div>   
+
             <h2>Typography</h2>
+
+            <h3>Configuration</h3>
+            <pre class="config">
+$font-base-size: 17px !default;
+$font-line-height: 1.5 !default;
+$std-bottom-margin: 1rem !default;
+
+$body-font-family: "" !default;
+$body-font-weight: 400 !default;
+$mono-font-family: "" !default;
+$header-font-family: "" !default;
+
+$header-line-height: 1.3 !default;
+$header-1-2-font-weight: 300 !default;
+$header-3-4-font-weight: 300 !default;
+$header-5-6-font-weight: 600 !default;
+
+$body-text-color: $gray-80 !default;
+$secondary-text-color: $gray-50 !default;
+$inverted-text-color: white !default;
+$inverted-secondary-text-color: $gray-20 !default;
+$link-text-color: $highlightColor !default;</pre>
             <h3>Text styles</h3>
             <figure class="example">                
                 <p class="lead">This is a paragraph. Specifically, this is a leading paragraph. The paragraph has a <code>lead</code> class applied to it. It can be used to lead into new articles or highlight specific passages.</p>
@@ -554,13 +612,11 @@
             <figure class="example">
                 <p>Sometimes fate is like a small sandstorm that keeps changing directions. You change direction but the sandstorm chases you. You turn again, but the storm adjusts. Over and over you play this out, like some ominous dance with death just before dawn.</p> 
                 
-                <p class="lightest-shade dark-content">Why? Because this storm isn’t something that blew in from far away, something that has nothing to do with you. This storm is you. Something inside of you. So all you can do is give in to it, step right inside the storm, closing your eyes and plugging up your ears so the sand doesn’t get in, and walk through it, step by step.</p>
+                <p class="secondary">Why? Because this storm isn’t something that blew in from far away, something that has nothing to do with you. This storm is you. Something inside of you. So all you can do is give in to it, step right inside the storm, closing your eyes and plugging up your ears so the sand doesn’t get in, and walk through it, step by step.</p>
 
-                <p class="lightest-shade medium-content">There’s no sun there, no moon, no direction, no sense of time. Just fine white sand swirling up into the sky like pulverized bones. That’s the kind of sandstorm you need to imagine.</p>
+                <p class="light-content primary inverted">There’s no sun there, no moon, no direction, no sense of time. Just fine white sand swirling up into the sky like pulverized bones. That’s the kind of sandstorm you need to imagine.</p>
 
-                <p class="medium-shade medium-content">And you really will have to make it through that violent, metaphysical, symbolic storm. No matter how metaphysical or symbolic it might be, make no mistake about it: it will cut through flesh like a thousand razor blades. People will bleed there, and you will bleed too. Hot, red blood. You’ll catch that blood in your hands, your own blood and the blood of others.</p>
-
-                <p class="darkest-shade light-content">And once the storm is over you won’t remember how you made it through, how you managed to survive. You won’t even be sure, in fact, whether the storm is really over. But one thing is certain. When you come out of the storm you won’t be the same person who walked in. That’s what this storm’s all about.</p>                
+                <p class="light-content secondary inverted">And you really will have to make it through that violent, metaphysical, symbolic storm. No matter how metaphysical or symbolic it might be, make no mistake about it: it will cut through flesh like a thousand razor blades. People will bleed there, and you will bleed too. Hot, red blood. You’ll catch that blood in your hands, your own blood and the blood of others.</p>            
             </figure>
 
             <h3>Text alignment</h3>
@@ -574,6 +630,7 @@
             <figure class="example">
                 <p>Here are some other text treatments. Here's a <a href="#test">link</a>. Here's a site that you've likely <a href="www.google.com">visited before</a>. This is <strong>what superman is</strong>. And <em>a little bit of oomph for those who need them</em>. Or sometimes you just need to <s>strikethrough</s> or <del>delete</del> things.</p>
             </figure>
+
             <h3>Headings</h3>
             <figure class="example">
                 <h1 class="loud">h1.loud Use this for headings that need to shout</h1>
@@ -583,6 +640,22 @@
                 <h4>h4. Heading 4</h4>
                 <h5>h5. Heading 5</h5>
                 <h6>h6. Heading 6</h6>
+            </figure>
+
+            <h3>Headings and body</h3>
+            <figure class="example">                    
+                <h1>h1. This is the largest heading, such as the page title but it can flow into a second line</h1>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula.</p>
+                <h2>h2. Heading 2</h2>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula.</p>
+                <h3>h3. Heading 3</h3>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula. </p>
+                <h4>h4. Heading 4</h4>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula. </p>
+                <h5>h5. Heading 5</h5>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula. </p>
+                <h6>h6. Heading 6</h6>
+                <p>Donec dignissim venenatis nulla. Aenean laoreet, purus vitae hendrerit feugiat, ligula tortor sollicitudin leo, et sagittis tortor libero at lacus. Duis luctus quis lorem vitae vehicula. </p>
             </figure>
 
             <h3>Lists</h3>
@@ -611,6 +684,16 @@
 
             <h2 class="section-heading">Forms & Controls</h2>
 
+            <h3>Configuration</h3>
+            <pre class="config">
+$formElementHeight: 40px;
+$formHighlightColor: $highlightColor;
+$formBackgroundColor: $lightestGray;
+$formBackgroundColorActive: darken($formBackgroundColor, 5%);
+$formBackgroundColorFocused: white;
+$formBorderColor: $lighterGray; 
+$formBorder: 1px solid $formBorderColor;</pre>
+
             <h3>Text input</h3>
             <figure class="example">
                 <div class="form-item">
@@ -630,6 +713,104 @@
                 <div class="form-item">
                     <label for="exampleFormInputTextarea">Textarea</label>
                     <textarea id="exampleFormInputTextarea" placeholder="Such is a long description" rows="4" maxlength="100"></textarea>
+                </div>
+                <div class="form-item">
+                    <label for"exampleSelect">Select</label>
+                    <select id="exampleSelect">
+                        <option>1-10</option>
+                        <option>11-20</option>
+                        <option>21-30</option>
+                        <option>31-40</option>
+                        <option>41-50</option>
+                        <option>50+</option>
+                    </select>
+                </div>
+            </figure>
+
+            <h3>Radio buttons and check boxes</h3>
+            <figure class="example">
+                <div class="form-item">
+                    <p>What is the right number?</p>
+                    <div class="form-option">
+                        <input type="radio" id="radio-one" name="numbers" value="one" />
+                        <label for="radio-one">One</label>
+                    </div>
+                    <div class="form-option">
+                        <input type="radio" id="radio-two" name="numbers" value="two" />
+                        <label for="radio-two">Two</label>
+                    </div>
+                    <div class="form-option">
+                        <input type="radio" id="radio-three" name="numbers" value="three" />
+                        <label for="radio-three">Three</label>   
+                    </div>
+                </div>
+                
+                <div class="form-item">
+                    <p>What is the right number?</p>
+                    <div class="form-option">
+                        <input type="checkbox" id="checkbox-one" name="cb-numbers" value="one"/ >
+                        <label for="checkbox-one">One</label>
+                    </div>
+                    <div class="form-option">
+                        <input type="checkbox" id="checkbox-two" name="cb-numbers" value="two" />
+                        <label for="checkbox-two">Two</label>
+                    </div>
+                    <div class="form-option">
+                        <input type="checkbox" id="checkbox-three" name="cb-numbers" value="three" />
+                        <label for="checkbox-three">Three</label>
+                    </div>
+                </div>                
+            </figure>
+
+            <h3>HTML5 controls</h3>
+            <figure class="example">
+                <div class="form-item">
+                    <label for="exampleFormInputColor">Color</label>
+                    <input type="color" id="exampleFormInputColor" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputDate">Date</label>
+                    <input type="date" id="exampleFormInputDate" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputDateTimeLocal">Date Time Local</label>
+                    <input type="datetime-local" id="exampleFormInputDateTimeLocal" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputEmail">Email</label>
+                    <input type="email" id="exampleFormInputEmail"/>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputMonth">Month</label>
+                    <input type="month" id="exampleFormInputMonth"/>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputNumber">Number</label>
+                    <input type="number" id="exampleFormInputNumber" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputRange">Range</label>
+                    <input type="range" id="exampleFormInputRange" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputSearch">Search</label>
+                    <input type="search" id="exampleFormInputSearch"/>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputTel">Tel</label>
+                    <input type="tel" id="exampleFormInputTel"/>
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputTime">Time</label>
+                    <input type="time" id="exampleFormInputTime" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputURL">URL</label>
+                    <input type="url" id="exampleFormInputURL" />
+                </div>
+                <div class="form-item">
+                    <label for="exampleFormInputWeek">Week</label>
+                    <input type="week" id="exampleFormInputWeek" />
                 </div>
             </figure>
 
@@ -656,12 +837,6 @@
                     <a class="button primary small">a.button</a>
                 </div>
             </figure>
-
-            <figure class="example">
-                <a class="link-button">link-button</a>
-                <a class="link-button secondary">link-button</a>
-            </figure>
-
         </article>
 
         <div id="toc" class="col-lg-4 visible-lg">
