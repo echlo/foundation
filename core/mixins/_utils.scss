@@ -1,13 +1,13 @@
 @mixin clearfix {
-	&::after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 @mixin high-resolution {
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
-    	@content;
-	}
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
 }

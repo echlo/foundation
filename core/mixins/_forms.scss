@@ -1,1 +1,7 @@
-$formElementHeight: 40px;
+$formElementHeight: 40px !default;
+$formHighlightColor: $highlightColor !default;
+$formBackgroundColor: $gray-3 !default;
+$formBackgroundColorActive: darken($formBackgroundColor, 5%) !default;
+$formBackgroundColorFocused: white !default;
+$formBorderColor: $lighterGray !default;
+$formBorder: 1px solid $formBorderColor !default;

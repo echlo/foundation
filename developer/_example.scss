@@ -1,78 +1,131 @@
 #toc {
-	padding-top: 1rem;
-	position: fixed;
-	right: 0;	
+  padding-top: 1rem;
+  position: fixed;
+  right: 0;
 
-	.toc-h3 {
-		padding-left: 1.5rem;
-	}
+  .toc-h3 {
+    padding-left: 1.5rem;
+  }
 }
 
 #example {
-	padding-top: 3rem;
-	padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+pre.config {
+  padding: 10px 20px;
+  background-color: $gray-5;
 }
 
 figure.example {
-	padding: 50px 15px 15px;
-	margin-bottom: 10px;
-	position: relative;
+  padding: 50px 15px 15px;
+  margin-bottom: 1.5rem;
+  position: relative;
 
-	.row {
-		margin-bottom: 15px;
-	}
+  .row {
+    margin-bottom: 15px;
+  }
 
-	&:after {
-		content: "Example";
-		font-size: 12px;
-		text-transform: uppercase;
-		color: #999999;
-		top: 15px;
-		left: 15px;
-		position: absolute;
-	}
+  &:after {
+    content: "Example";
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999999;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+  }
 
-	&.light-content {
-		background: black;
-	}
+  & .light-content {
+    background: black;
+  }
 
-	pre, code {
-		white-space: pre-wrap;
-	}
-	
-	pre {
-		margin: 20px -15px -15px;
-		
-		code {
-			padding: 15px;
-		}
-	}
+  pre,
+  code {
+    white-space: pre-wrap;
+  }
+
+  pre {
+    margin: 20px -15px -15px;
+
+    code {
+      padding: 15px;
+    }
+  }
 }
 
 .show-container {
-	.container {
-		border: 1px solid #8be053;
-		background: #dbefce;
-	}
+  .container {
+    border: 1px solid #8be053;
+    background: #dbefce;
+  }
 }
 
 .show-row {
-	.row, [class^="row"] {
-		border: 1px solid #f9887f;
-		background: #f7d2d0;
-	}
+  .row,
+  [class^="row"] {
+    border: 1px solid #f9887f;
+    background: #f7d2d0;
+  }
 }
 
 .show-col {
-	[class^="col"] {
-		border: 1px solid #3dc0e8;
-		background: #ceebf3;
-	}
+  [class^="col"] {
+    border: 1px solid #3dc0e8;
+    background: #ceebf3;
+  }
 }
 
 .show-p {
-	p {
-		border: 1px solid #3dc0e8;
-		background: #ceebf3; 
-	}
+  p {
+    border: 1px solid #3dc0e8;
+    background: #ceebf3;
+  }
+}
+
+// Colors
+.color-block {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+  &.highlight {
+    background-color: $highlightColor;
+  }
+
+  &.gray-3 {
+    background-color: $gray-3;
+  }
+
+  &.gray-5 {
+    background-color: $gray-5;
+  }
+  &.gray-10 {
+    background-color: $gray-10;
+  }
+  &.gray-20 {
+    background-color: $gray-20;
+  }
+  &.gray-35 {
+    background-color: $gray-35;
+  }
+  &.gray-40 {
+    background-color: $gray-40;
+  }
+  &.gray-50 {
+    background-color: $gray-50;
+  }
+  &.gray-65 {
+    background-color: $gray-65;
+  }
+  &.gray-80 {
+    background-color: $gray-80;
+  }
+  &.gray-90 {
+    background-color: $gray-90;
+  }
+  &.gray-95 {
+    background-color: $gray-95;
+  }
 }

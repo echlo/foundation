@@ -1,0 +1,24 @@
+/* Raw colors */
+// Grayscale colors
+$gray-3: #f9f9f9;
+$gray-5: #f2f2f2;
+$gray-10: #e5e5e5;
+$gray-20: #cccccc;
+$gray-35: #acacac;
+$gray-40: #999999;
+$gray-50: #7f7f7f;
+$gray-65: #595959;
+$gray-80: #333333;
+$gray-90: #191919;
+$gray-95: #0d0d0d;
+
+/* Semantic colors */
+$highlightColor: #2b87ff !default;
+
+$backgroundGray: $gray-5 !default;
+// deprecating...
+$lightestGray: $gray-5 !default;
+$lighterGray: $gray-20 !default;
+$lightGray: $gray-35 !default;
+$gray: $gray-40 !default;
+$darkGray: $gray-50 !default;

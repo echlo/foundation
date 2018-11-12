@@ -41,6 +41,7 @@
 }
 .column {
 	@extend %column-props;
+	width: auto;
 }
 
 // Then we generate the width and visibility constraints

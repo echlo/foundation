@@ -2,133 +2,133 @@
 
 // Use this mixin to make columns
 @mixin make-container() {
-	display: flex;
-	flex-direction: column;
-	margin: 0 auto;	
-	padding-left: $gutter-width/2;
-	padding-right: $gutter-width/2;
-	width: 100%;
-	box-sizing: border-box;	
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-left: $gutter-width/2;
+  padding-right: $gutter-width/2;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 // Column mixins
 @function size-class($size, $val) {
-	@if $val == 0 {
-		@return "";
-	}
-	@return "-" + $size;
+  @if $val == 0 {
+    @return "";
+  }
+  @return "-" + $size;
 }
 
 @mixin col-alignment($size-class: "") {
-	&.reverse#{$size-class} {
-		flex-direction: column-reverse;
-	}
+  &.reverse#{$size-class} {
+    flex-direction: column-reverse;
+  }
 
-	&.top#{$size-class} {
-		justify-content: flex-start;
-	}
+  &.top#{$size-class} {
+    justify-content: flex-start;
+  }
 
-	&.middle#{$size-class} {
-		justify-content: center;
-	}
+  &.middle#{$size-class} {
+    justify-content: center;
+  }
 
-	&.bottom#{$size-class} {
-		justify-content: flex-end;
-	}
+  &.bottom#{$size-class} {
+    justify-content: flex-end;
+  }
 
-	&.justify#{$size-class} {
-		justify-content: space-between;
-	}
+  &.justify#{$size-class} {
+    justify-content: space-between;
+  }
 
-	&.around#{$size-class} {
-		justify-content: space-around;
-	}
+  &.around#{$size-class} {
+    justify-content: space-around;
+  }
 
-	&.start#{$size-class} {
-		align-items: flex-start;
-	}
+  &.start#{$size-class} {
+    align-items: flex-start;
+  }
 
-	&.center#{$size-class} {
-		align-items: center;
-	}
+  &.center#{$size-class} {
+    align-items: center;
+  }
 
-	&.end#{$size-class} {
-		align-items: flex-end;
-	}
-	// Stretch is the default value, and hence omitted	
+  &.end#{$size-class} {
+    align-items: flex-end;
+  }
+  // Stretch is the default value, and hence omitted
 }
 
 // Use this mixin to give classes properties like a column
 @mixin make-col($gutter: $gutter-width) {
-	display: flex;
-	flex-grow: 1;
-	flex-shrink: 1;	 
-	flex-direction: column;
-	min-height: 1px;
-	padding-left: ($gutter/2);
-	padding-right: ($gutter/2);
-	position: relative;
-	box-sizing: border-box;
-	width: 100%;	
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
+  min-height: 1px;
+  padding-left: ($gutter/2);
+  padding-right: ($gutter/2);
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 @mixin make-col-span($columns) {
-	flex-basis: percentage($columns/$grid-columns);
-	max-width: percentage($columns/$grid-columns);
+  flex-basis: percentage($columns/$grid-columns);
+  max-width: percentage($columns/$grid-columns);
 }
 
 @mixin make-col-offset($columns) {
-	margin-left: percentage($columns/$grid-columns);
+  margin-left: percentage($columns/$grid-columns);
 }
 
 // The mixin helps standardizes all alignment classes for rows
 @mixin row-alignment($size-class: "") {
-	&.reverse#{$size-class} {
-		flex-direction: row-reverse;
-	}
+  &.reverse#{$size-class} {
+    flex-direction: row-reverse;
+  }
 
-	&.start#{$size-class} {
-		justify-content: flex-start;
-	}
+  &.start#{$size-class} {
+    justify-content: flex-start;
+  }
 
-	&.center#{$size-class} {
-		justify-content: center;
-	}
+  &.center#{$size-class} {
+    justify-content: center;
+  }
 
-	&.end#{$size-class} {
-		justify-content: flex-end;
-	}
+  &.end#{$size-class} {
+    justify-content: flex-end;
+  }
 
-	&.justify#{$size-class} {
-		justify-content: space-between;
-	}
+  &.justify#{$size-class} {
+    justify-content: space-between;
+  }
 
-	&.around#{$size-class} {
-		justify-content: space-around;
-	}
+  &.around#{$size-class} {
+    justify-content: space-around;
+  }
 
-	&.top#{$size-class} {
-		align-items: flex-start;
-	}
+  &.top#{$size-class} {
+    align-items: flex-start;
+  }
 
-	&.middle#{$size-class} {
-		align-items: center;
-	}
+  &.middle#{$size-class} {
+    align-items: center;
+  }
 
-	&.bottom#{$size-class} {
-		align-items: flex-end;
-	}
+  &.bottom#{$size-class} {
+    align-items: flex-end;
+  }
 
-	&.tall#{$size-class} {
-		align-items: stretch;
-	}
+  &.tall#{$size-class} {
+    align-items: stretch;
+  }
 }
 // Use this mixin to give classes row properties
 @mixin make-row($gutter: $gutter-width) {
-	display: flex;
-	flex-shrink: 1;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin-left: ($gutter / -2);
-	margin-right: ($gutter / -2);	
+  display: flex;
+  flex-shrink: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
 }

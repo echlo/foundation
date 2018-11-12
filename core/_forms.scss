@@ -1,131 +1,202 @@
-@import "mixins/_forms";
+@import "mixins/forms";
 
-input, textarea, keygen, select, button {
-	font: inherit;
+input,
+textarea,
+keygen,
+select,
+button {
+  font: inherit;
 }
 
 .form-item {
-	margin-bottom: 1.0em;
+  margin-bottom: 1em;
 
-	label {
-		font-size: 80%;
-		font-weight: 500;
-		margin-bottom: 0.3em;
-		display: block;
-	}
+  label {
+    font-size: 80%;
+    font-weight: 500;
+    margin-bottom: 0.3em;
+    display: block;
+  }
 }
 
-// Text inputs
-input[type="text"], input[type="password"] {
-	width: 100%;
-	font-weight: 400;
-	height: $formElementHeight;
-	padding: 0px 0 0 10px;
-	background-color: $lightestGray;
-	border: 1px solid $lighterGray;
-	box-sizing: border-box;
+// Common inputs
+input,
+select {
+  width: 100%;
+  font-weight: 400;
+  height: $formElementHeight;
+  padding: 0px 0 0 10px;
+  background-color: $formBackgroundColor;
+  border: $formBorder;
+  box-sizing: border-box;
 
-	&:focus {
-		background: white;
-	}
-} 
+  &:focus {
+    background: $formBackgroundColorFocused;
+  }
+}
 
-a.link-button {
-	color: $highlightColor;
-	display: inline-block;
+input[type="color"] {
+  width: 40px;
+  padding: 1px 2px;
+}
 
-	&.secondary {
-		color: $darkGray;
-	}
+// Radio buttons and check boxes
 
-	&[disabled] {
-		opacity: 0.2;
-	}
+input[type="checkbox"],
+input[type="radio"] {
+  width: 0;
+  opacity: 0;
+  margin: 0;
+  display: none;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 1.5em;
+  margin-left: 0;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  &:before {
+    content: "";
+    visibility: visible;
+    position: absolute;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 50%;
+    background: $formBackgroundColor;
+    border: $formBorder;
+    left: 0;
+    bottom: 0.25rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+  &:hover:before {
+    border-color: $formHighlightColor;
+  }
+  &:active:before {
+    background: $formBackgroundColorActive;
+  }
+}
+
+input[type="radio"]:checked + label:before {
+  background: radial-gradient(
+    circle at 50%,
+    $formHighlightColor,
+    $formHighlightColor 50%,
+    $formBackgroundColor 50%
+  );
+  border-color: $highlightColor;
+}
+
+input[type="checkbox"] + label {
+  &:before {
+    border-radius: 3px;
+  }
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: "✓";
+  border-color: $formHighlightColor;
+  background-color: $formHighlightColor;
+  color: white;
 }
 
 a.no-text {
-	text-decoration: none;
-	&:hover {
-		text-decoration: none;
-	}
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 // All buttons in the system
-input[type="submit"], button, input[type="button"], a.button {
-	border-radius: 5px;
-	border: 1px solid $lighterGray;
-	background-color: transparent;
-	min-width: 100px;	
-	color: $highlightColor;	
-	line-height: 35px;
-	display: inline-block;
-	position: relative;
-	padding: 0 15px;
-	text-align: center;
-	vertical-align: baseline;
-	text-shadow: none;
-	font-weight: 500;	
+input[type="submit"],
+button,
+input[type="button"],
+a.button {
+  width: auto;
+  border-radius: 5px;
+  border: 1px solid $lighterGray;
+  background-color: transparent;
+  min-width: 100px;
+  color: $highlightColor;
+  line-height: 35px;
+  display: inline-block;
+  position: relative;
+  padding: 0 15px;
+  text-align: center;
+  vertical-align: baseline;
+  text-shadow: none;
+  font-weight: 500;
 
-	&.small {
-		font-size: 90%;
-		height: 0.9 * $formElementHeight;
-		line-height: 36px;
-		min-width: 80px;
-	}
+  &.small {
+    font-size: 90%;
+    height: 0.9 * $formElementHeight;
+    line-height: 36px;
+    min-width: 80px;
+  }
 
-	&.primary {
-		color: $highlightColor;		
-		border: 1px solid $highlightColor;				
-	}
+  &.primary {
+    color: $highlightColor;
+    border: 1px solid $highlightColor;
+  }
 
-	&:hover {		
-		top: -1px;
-		box-shadow: 0px 1px 0px $lighterGray;		
-		text-decoration: none;
-		cursor: default;		
-	}
+  &:hover {
+    top: -1px;
+    box-shadow: 0px 1px 0px $lighterGray;
+    text-decoration: none;
+    cursor: default;
+  }
 
-	&:active {
-		top: 0;
-		background-color: $lightestGray;
-		box-shadow: inset 0px 1px 0px $lighterGray;
-	}
+  &:active {
+    top: 0;
+    background-color: $lightestGray;
+    box-shadow: inset 0px 1px 0px $lighterGray;
+  }
 
-	&[disabled], &[disabled]:hover, &[disabled]:active, &.primary[disabled], &.primary[disabled]:hover, &.primary[disabled]:active {		
-		top: 0;
-		background-color: transparent;
-		color: adjust-color($color: $highlightColor, $lightness: +20%);		
-		box-shadow: none;
-	}
-	
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:active,
+  &.primary[disabled],
+  &.primary[disabled]:hover,
+  &.primary[disabled]:active {
+    top: 0;
+    background-color: transparent;
+    color: adjust-color($color: $highlightColor, $lightness: +20%);
+    box-shadow: none;
+  }
 }
 
 .form-error {
-	color: red;
-	font-size: 12px;
-	padding: 5px 2px;
+  color: red;
+  font-size: 12px;
+  padding: 5px 2px;
 
-	&.hidden {
-		display: none;
-	}
+  &.hidden {
+    display: none;
+  }
 }
 
 textarea {
-	width: 100%;
-	font-weight: 400;
-	// height: 3 * $formElementHeight;
-	padding: 5px 0 0 10px;
-	background-color: $lightestGray;
-	border: 1px solid $lighterGray;
-	box-sizing: border-box;
+  width: 100%;
+  font-weight: 400;
+  // height: 3 * $formElementHeight;
+  padding: 5px 0 0 10px;
+  background-color: $formBackgroundColor;
+  border: $formBorder;
+  box-sizing: border-box;
 
-	&:focus {
-		background: white;
-	}
+  &:focus {
+    background: white;
+  }
 }
 
 figure {
-	border: 1px solid $lighterGray;	
-	overflow: auto;
-	margin-bottom: $std-bottom-margin;
+  border: $formBorder;
+  overflow: auto;
+  margin-bottom: $std-bottom-margin;
 }
